@@ -1,117 +1,115 @@
 <template>
-    <div class="resp_log_wrap">
-        <div class="resp_log_thumb"
-             style="background:url('/assets/img/log.jpg')no-repeat;"></div>
-        <div class="resp_log_caption">
-                <span class="mod-close" data-dismiss="modal" aria-hidden="true">
-                    <i class="ti-close"></i></span>
-            <div class="edlio_152">
-                <ul class="nav nav-pills tabs_system center" id="pills-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="pills-login-tab" data-toggle="pill"
-                           href="#pills-login" role="tab" aria-controls="pills-login"
-                           aria-selected="true"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="pills-signup-tab" data-toggle="pill"
-                           href="#pills-signup" role="tab" aria-controls="pills-signup"
-                           aria-selected="false"><i class="fas fa-user-plus mr-2"></i>Register</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
-                     aria-labelledby="pills-login-tab">
-                    <div class="login-form">
-                        <form>
-                            <div class="form-group">
-                                <label>User Name</label>
-                                <div class="input-with-icon">
-                                    <input type="text" class="form-control">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </div>
+    <!-- row Start -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-8 col-md-7">
+            <div class="property_block_wrap">
 
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-with-icon">
-                                    <input type="password" class="form-control">
-                                    <i class="ti-unlock"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="eltio_ol9">
-                                    <div class="eltio_k1">
-                                        <input id="dd" class="checkbox-custom" name="dd" type="checkbox">
-                                        <label for="dd" class="checkbox-custom-label">Remember Me</label>
-                                    </div>
-                                    <div class="eltio_k2">
-                                        <a href="#">Lost Your Password?</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-md full-width pop-login">Login</button>
-                            </div>
-
-                        </form>
-                    </div>
+                <div class="property_block_wrap_header">
+                    <h4 class="property_block_title">Register</h4>
                 </div>
-                <div class="tab-pane fade" id="pills-signup" role="tabpanel"
-                     aria-labelledby="pills-signup-tab">
-                    <div class="login-form">
-                        <form>
 
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <div class="input-with-icon">
-                                    <input type="text" class="form-control">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Email ID</label>
-                                <div class="input-with-icon">
-                                    <input type="email" class="form-control">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-with-icon">
-                                    <input type="password" class="form-control">
-                                    <i class="ti-unlock"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="eltio_ol9">
-                                    <div class="eltio_k1">
-                                        <input id="dds" class="checkbox-custom" name="dds" type="checkbox">
-                                        <label for="dds" class="checkbox-custom-label">By using the website, you accept the terms and conditions</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-md full-width pop-login">Register</button>
-                            </div>
-
-                        </form>
-                    </div>
+                <div v-if="errors" class="justify-content-center text-center">
+                    <p v-for="(error, key) in errors" :key="key">
+                        {{ error }}
+                    </p>
                 </div>
+
+                <div v-show="loginLoading" class="justify-content-center text-center">
+                    <img width="100" src="/images/loaders/loader.gif">
+                </div>
+
+                <form @submit.prevent="submitLogin" v-if="!loginLoading">
+                    <div class="block-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input v-model="form.email" type="email" name="email"
+                                           class="form-control simple" required>
+                                    <p class="text-danger text-center m-0" v-if="errors.email">
+                                        {{ errors.email.toString() }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input v-model="form.email" type="email" name="email"
+                                           class="form-control simple" required>
+                                    <p class="text-danger text-center m-0" v-if="errors.email">
+                                        {{ errors.email.toString() }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input v-model="form.password" type="password" name="password"
+                                           class="form-control simple" required>
+                                    <p class="text-danger text-center m-0" v-if="errors.password">
+                                        {{ errors.password.toString() }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input v-model="form.password" type="password" name="password"
+                                           class="form-control simple" required>
+                                    <p class="text-danger text-center m-0" v-if="errors.password">
+                                        {{ errors.password.toString() }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-theme" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
+
         </div>
+
     </div>
+    <!-- /row -->
 </template>
 
 <script>
     export default {
-        name: "RegisterLogin"
+        data() {
+            return {
+                form: {
+                    email: '',
+                    password: '',
+                },
+
+                errors: [],
+                errorAlert: false,
+                messageAlert: '',
+                loginLoading: false
+            }
+        },
+
+        methods: {
+            submitLogin: function () {
+                this.loginLoading = true;
+                axios.post('/api/register', this.form).then((response) => {
+                    response.data.success === true ? [
+                        this.errors = [],
+                        window.location.href = '/login',
+                    ] : [
+                        response.data.message ? this.errors.push(response.data.message)  : false,
+                        this.errors = response.data.errors,
+                    ];
+                    console.log(response.data);
+                }).catch((error) => {
+
+                }).finally(() => {
+                    this.loginLoading = false;
+                });
+            },
+
+        },
+
     }
 </script>
 

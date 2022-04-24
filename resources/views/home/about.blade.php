@@ -31,48 +31,141 @@
     </div>
     <!-- ============================ Hero Banner End ================================== -->
 
+    <!-- ============================ List Tag Start ================================== -->
     <section>
         <div class="container">
-            <!-- row Start -->
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="story-wrap explore-content">
-                        <h2>Our Agency Story</h2>
-                        <span class="theme-cl">Check out our company story and work process</span>
-                        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="eplios_tags">
+                        <h2>Atlantic Residents Properties</h2>
+                        <p>Buying a home is one of the most important decisions you will make, and our local experts at eXp Realty are here to make the process as easy as possible. Atlantic Residents Properties is one of the world’s fastest-growing real estate brokerages. Founded in 2009, we are now in 18 countries around the world with a community of over 80,000+ real estate professionals, all connected through our unique cloud-based platform.</p>
+                        <ul class="eplios_list">
+                            <li>100% Money Gaurantee</li>
+                            <li>Super & Perfect Place</li>
+                            <li>Effective & Best Price</li>
+                            <li>Friendly & Lovely Area</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6">
-                    <img src="{{ asset('assets/img/immio.jpg') }}" class="img-fluid rounded" alt="">
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
+                    <div class="text-center">
+                        <img src="{{ asset('assets/img/tag.png') }}" class="img-fluid" alt="" />
+                    </div>
                 </div>
 
             </div>
-            <!-- /row -->
         </div>
     </section>
+    <!-- ============================ Property Tag End ================================== -->
 
-    <!-- ============================ article Start ================================== -->
-    <div class="clearfix"></div>
-    <!-- ============================ article End ================================== -->
-
-    <!-- ============================ Call To Action ================================== -->
-    <section class="theme-bg call_action_wrap-wrap">
+    <!-- ============================ Property Type Start ================================== -->
+    <section class="light-bg min">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="call_action_wrap">
-                        <div class="call_action_wrap-head">
-                            <h3>Do You Have Questions ?</h3>
-                            <span>We'll help you to grow your career and growth.</span>
-                        </div>
-                        <a href="#" class="btn btn-call_action_wrap">Contact Us Today</a>
-                    </div>
 
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="sec-heading center">
+                        <h2>Featured Property Types</h2>
+                        <p>Find All Type of Property.</p>
+                    </div>
                 </div>
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg col-md-4">
+                    <!-- Single Category -->
+                    <div class="property_cats_boxs">
+                        <a href="" class="category-box">
+                            <div class="property_category_short">
+                                <div class="category-icon clip-1">
+                                    <i class="flaticon-beach-house-2"></i>
+                                </div>
+
+                                <div class="property_category_expand property_category_short-text">
+                                    <h4>Family House</h4>
+                                    <p>122 Property</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg col-md-4">
+                    <!-- Single Category -->
+                    <div class="property_cats_boxs">
+                        <a href="" class="category-box">
+                            <div class="property_category_short">
+                                <div class="category-icon clip-2">
+                                    <i class="flaticon-cabin"></i>
+                                </div>
+
+                                <div class="property_category_expand property_category_short-text">
+                                    <h4>House & Villa</h4>
+                                    <p>155 Property</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg col-md-4">
+                    <!-- Single Category -->
+                    <div class="property_cats_boxs">
+                        <a href="" class="category-box">
+                            <div class="property_category_short">
+                                <div class="category-icon clip-3">
+                                    <i class="flaticon-apartments"></i>
+                                </div>
+
+                                <div class="property_category_expand property_category_short-text">
+                                    <h4>Apartment</h4>
+                                    <p>300 Property</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg col-md-4">
+                    <!-- Single Category -->
+                    <div class="property_cats_boxs">
+                        <a href="" class="category-box">
+                            <div class="property_category_short">
+                                <div class="category-icon clip-4">
+                                    <i class="flaticon-student-housing"></i>
+                                </div>
+
+                                <div class="property_category_expand property_category_short-text">
+                                    <h4>Office & Studio</h4>
+                                    <p>80 Property</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg col-md-4">
+                    <!-- Single Category -->
+                    <div class="property_cats_boxs">
+                        <a href="" class="category-box">
+                            <div class="property_category_short">
+                                <div class="category-icon clip-5">
+                                    <i class="flaticon-modern-house-4"></i>
+                                </div>
+
+                                <div class="property_category_expand property_category_short-text">
+                                    <h4>Villa & Condo</h4>
+                                    <p>80 Property</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-    <!-- ============================ Call To Action End ================================== -->
+    <!-- ============================ Property Type End ================================== -->
 @endsection

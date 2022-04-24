@@ -6,19 +6,27 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-7 col-sm-12 pr-1">
                     <div class="gg_single_part left">
-                        <a href="/assets/img/p-2.png" class="mfp-gallery">
-                            <img src="/assets/img/p-2.png" class="img-fluid mx-auto" alt="" /></a></div>
+                        <a :href="'/photos/properties/'+property.image1" class="mfp-gallery">
+                            <img :src="'/photos/properties/'+property.image1"
+                                 class="img-fluid mx-auto" alt="" /></a></div>
                 </div>
                 <div class="col-lg-4 col-md-5 col-sm-12 pl-1">
-                    <div class="gg_single_part-right min">
-                        <a href="/assets/img/p-5.png" class="mfp-gallery">
-                            <img src="/assets/img/p-5.png" class="img-fluid mx-auto" alt="" /></a></div>
-                    <div class="gg_single_part-right min mt-2 mb-2">
-                        <a href="/assets/img/p-3.png" class="mfp-gallery">
-                            <img src="/assets/img/p-3.png" class="img-fluid mx-auto" alt="" /></a></div>
-                    <div class="gg_single_part-right min">
-                        <a href="/assets/img/p-4.png" class="mfp-gallery">
-                            <img src="/assets/img/p-4.png" class="img-fluid mx-auto" alt="" /></a></div>
+                    <div v-if="property.image2" class="gg_single_part-right min">
+                        <a :href="'/photos/properties/'+property.image2" class="mfp-gallery">
+                            <img :src="'/photos/properties/'+property.image2"
+                                 class="img-fluid mx-auto" alt="" /></a></div>
+                    <div v-if="property.image3" class="gg_single_part-right min mt-2 mb-2">
+                        <a :href="'/photos/properties/'+property.image3" class="mfp-gallery">
+                            <img :src="'/photos/properties/'+property.image3"
+                                 class="img-fluid mx-auto" alt="" /></a></div>
+                    <div v-if="property.image4" class="gg_single_part-right min">
+                        <a :href="'/photos/properties/'+property.image4" class="mfp-gallery">
+                            <img :src="'/photos/properties/'+property.image4"
+                                 class="img-fluid mx-auto" alt="" /></a></div>
+                    <div v-if="property.image5" class="gg_single_part-right min">
+                        <a :href="'/photos/properties/'+property.image5" class="mfp-gallery">
+                            <img :src="'/photos/properties/'+property.image5"
+                                 class="img-fluid mx-auto" alt="" /></a></div>
                 </div>
             </div>
         </div>
@@ -27,17 +35,17 @@
     <div class="featured_slick_gallery gray d-block d-md-block d-lg-block d-xl-none">
         <div class="featured_slick_gallery-slide">
             <div class="featured_slick_padd">
-                <a href="/assets/img/slider-2.jpg" class="mfp-gallery">
-                    <img src="/assets/img/slider-2.jpg" class="img-fluid mx-auto" alt="" /></a></div>
-            <div class="featured_slick_padd">
-                <a href="/assets/img/slider-3.jpg" class="mfp-gallery">
-                    <img src="/assets/img/slider-3.jpg" class="img-fluid mx-auto" alt="" /></a></div>
-            <div class="featured_slick_padd">
-                <a href="/assets/img/slider-4.jpg" class="mfp-gallery">
-                    <img src="/assets/img/slider-4.jpg" class="img-fluid mx-auto" alt="" /></a></div>
-            <div class="featured_slick_padd">
-                <a href="/assets/img/slider-5.jpg" class="mfp-gallery">
-                    <img src="/assets/img/slider-5.jpg" class="img-fluid mx-auto" alt="" /></a></div>
+                <a :href="'/photos/properties/'+property.image1" class="mfp-gallery">
+                    <img :src="'/photos/properties/'+property.image1" class="img-fluid mx-auto" alt="" /></a></div>
+            <div v-if="property.image2" class="featured_slick_padd">
+                <a :href="'/photos/properties/'+property.image2" class="mfp-gallery">
+                    <img :src="'/photos/properties/'+property.image2" class="img-fluid mx-auto" alt="" /></a></div>
+            <div v-if="property.image3" class="featured_slick_padd">
+                <a :href="'/photos/properties/'+property.image3" class="mfp-gallery">
+                    <img :src="'/photos/properties/'+property.image3" class="img-fluid mx-auto" alt="" /></a></div>
+            <div v-if="property.image4" class="featured_slick_padd">
+                <a :href="'/photos/properties/'+property.image4" class="mfp-gallery">
+                    <img :src="'/photos/properties/'+property.image4" class="img-fluid mx-auto" alt="" /></a></div>
         </div>
     </div>
     <!-- ============================ Hero Banner End ================================== -->
@@ -190,8 +198,8 @@
 
                         <div class="sider_blocks_wrap">
                             <div class="side-booking-header">
-                                <div class="sb-header-left"><h3 class="price">$470<sub>/Night</sub><span class="offs">$510</span></h3></div>
-                                <div class="price_offer">20% Off</div>
+                                <div class="sb-header-left">
+                                    <h3 class="price">${{ property.cost }}</h3></div>
                             </div>
                             <div class="side-booking-body">
                                 <div class="row">
@@ -299,7 +307,7 @@
                             <div class="side-booking-body">
                                 <div class="agent-_blocks_title">
 
-                                    <div class="agent-_blocks_thumb"><img src="assets/img/user-6.jpg" alt=""></div>
+                                    <div class="agent-_blocks_thumb"><img src="/assets/img/user-6.jpg" alt=""></div>
                                     <div class="agent-_blocks_caption">
                                         <h4><a href="#">Shivangi Preet</a></h4>
                                         <span class="approved-agent"><i class="ti-check"></i>approved</span>
@@ -310,136 +318,12 @@
                                 <a href="#" class="agent-btn-contact" data-toggle="modal" data-target="#autho-message"><i class="ti-comment-alt"></i>Message</a>
 
                                 <span id="number" data-last="+1234567896">
-											<span><i class="ti-headphone-alt"></i><a class="see">+355(44)35...Show</a></span>
+											<span><i class="ti-headphone-alt"></i><a class="see">
+                                                +355(44)35...Show</a></span>
 										</span>
                             </div>
                         </div>
 
-                        <!-- Mortgage Calculator -->
-                        <div class="sider_blocks_wrap">
-                            <div class="side-booking-header">
-                                <h4 class="m-0">Mortgage Calculator</h4>
-                            </div>
-
-                            <div class="sider-block-body p-3">
-                                <div class="form-group">
-                                    <div class="input-with-icon">
-                                        <input type="text" class="form-control light" placeholder="Sale Price">
-                                        <i class="ti-money"></i>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-with-icon">
-                                        <input type="text" class="form-control light" placeholder="Down Payment">
-                                        <i class="ti-money"></i>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-with-icon">
-                                        <input type="text" class="form-control light" placeholder="Loan Term (Years)">
-                                        <i class="ti-calendar"></i>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-with-icon">
-                                        <input type="text" class="form-control light" placeholder="Interest Rate">
-                                        <i class="fa fa-percent"></i>
-                                    </div>
-                                </div>
-                                <div class="mortgage mb-2">Monthly Payment: 22742.10 $</div>
-                                <button class="btn book_btn theme-bg">Calculate</button>
-                            </div>
-                        </div>
-
-                        <!-- Similar Property -->
-                        <div class="sidebar-widgets">
-
-                            <h4>Similar Property</h4>
-
-                            <div class="sidebar_featured_property">
-
-                                <!-- List Sibar Property -->
-                                <div class="sides_list_property">
-                                    <div class="sides_list_property_thumb">
-                                        <img src="assets/img/p-1.png" class="img-fluid" alt="" />
-                                    </div>
-                                    <div class="sides_list_property_detail">
-                                        <h4><a href="">Loss vengel New Apartment</a></h4>
-                                        <span><i class="ti-location-pin"></i>Sans Fransico</span>
-                                        <div class="lists_property_price">
-                                            <div class="lists_property_types">
-                                                <div class="property_types_vlix sale">For Sale</div>
-                                            </div>
-                                            <div class="lists_property_price_value">
-                                                <h4>$4,240</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- List Sibar Property -->
-                                <div class="sides_list_property">
-                                    <div class="sides_list_property_thumb">
-                                        <img src="assets/img/p-4.png" class="img-fluid" alt="" />
-                                    </div>
-                                    <div class="sides_list_property_detail">
-                                        <h4><a href="single-property-1.html">Montreal Quriqe Apartment</a></h4>
-                                        <span><i class="ti-location-pin"></i>Liverpool, London</span>
-                                        <div class="lists_property_price">
-                                            <div class="lists_property_types">
-                                                <div class="property_types_vlix">For Rent</div>
-                                            </div>
-                                            <div class="lists_property_price_value">
-                                                <h4>$7,380</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- List Sibar Property -->
-                                <div class="sides_list_property">
-                                    <div class="sides_list_property_thumb">
-                                        <img src="assets/img/p-7.png" class="img-fluid" alt="" />
-                                    </div>
-                                    <div class="sides_list_property_detail">
-                                        <h4><a href="single-property-1.html">Curmic Studio For Office</a></h4>
-                                        <span><i class="ti-location-pin"></i>Montreal, Canada</span>
-                                        <div class="lists_property_price">
-                                            <div class="lists_property_types">
-                                                <div class="property_types_vlix buy">For Buy</div>
-                                            </div>
-                                            <div class="lists_property_price_value">
-                                                <h4>$8,730</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- List Sibar Property -->
-                                <div class="sides_list_property">
-                                    <div class="sides_list_property_thumb">
-                                        <img src="assets/img/p-5.png" class="img-fluid" alt="" />
-                                    </div>
-                                    <div class="sides_list_property_detail">
-                                        <h4><a href="single-property-1.html">Montreal Quebec City</a></h4>
-                                        <span><i class="ti-location-pin"></i>Sreek View, New York</span>
-                                        <div class="lists_property_price">
-                                            <div class="lists_property_types">
-                                                <div class="property_types_vlix">For Rent</div>
-                                            </div>
-                                            <div class="lists_property_price_value">
-                                                <h4>$6,240</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
 
                     </div>
                 </div>

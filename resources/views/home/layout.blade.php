@@ -57,12 +57,13 @@
                 <div class="nav-menus-wrapper" style="transition-property: none;">
                     <ul class="nav-menu">
                         <li><a href="{{ url('/') }}">Home<span class="submenu-indicator"></span></a></li>
-                        <li><a href="{{ url('/properties') }}">Properties<span class="submenu-indicator"></span></a>
-                            <ul class="nav-dropdown nav-submenu">
-                                <li><a href="#">Listing Grid</a></li>
-                                <li><a href="#">Listing List</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ url('/properties') }}">Properties<span class="submenu-indicator"></span></a></li>
+{{--                        <li><a href="{{ url('/properties') }}">Properties<span class="submenu-indicator"></span></a>--}}
+{{--                            <ul class="nav-dropdown nav-submenu">--}}
+{{--                                <li><a href="#">Listing Grid</a></li>--}}
+{{--                                <li><a href="#">Listing List</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
                         <li><a href="{{ url('/about') }}">About<span class="submenu-indicator"></span></a>
                             <ul class="nav-dropdown nav-submenu">
                                 <li><a href="{{ url('/about') }}">Company</a></li>
@@ -128,9 +129,9 @@
                                 <div class="footer_widget">
                                     <h4 class="widget_title">Links</h4>
                                     <ul class="footer-menu">
-                                        <li><a href="#">Home Page</a></li>
-                                        <li><a href="#">About Page</a></li>
-                                        <li><a href="#">Service Page</a></li>
+                                        <li><a href="{{ url('/terms') }}">Terms of use</a></li>
+                                        <li><a href="{{ url('/privacy') }}">Privacy policy</a></li>
+                                        <li><a href="{{ url('/contact') }}">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>

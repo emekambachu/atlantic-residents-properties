@@ -60,7 +60,7 @@
 
             <!-- row Start -->
             <div class="row">
-                <div class="col-lg-8 col-md-7">
+                <div class="col-lg-12 col-md-12">
                     <div class="property_block_wrap">
 
                         <div class="property_block_wrap_header">

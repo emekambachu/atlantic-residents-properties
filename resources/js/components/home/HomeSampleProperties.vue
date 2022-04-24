@@ -22,7 +22,7 @@
                 <div class="listing-short-detail-wrap">
                     <div class="_card_list_flex mb-2">
                         <div class="_card_flex_01">
-                            <span class="_list_blickes _netork">{{ property.location }}</span>
+                            <span class="_list_blickes _netork">{{ property.country.name }}</span>
 <!--                            <span class="_list_blickes types">Family</span>-->
                         </div>
                         <div class="_card_flex_last">

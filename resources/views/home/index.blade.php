@@ -285,144 +285,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-md-8">
                     <div class="sec-heading center light">
-                        <h2>Good Reviews By Clients</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-8">
-                    <div class="modern-testimonial">
-
-                        <!-- Single Items -->
-                        <div class="single_items">
-                            <div class="_smart_testimons">
-                                <div class="_smart_testimons_thumb">
-                                    <img src="{{ asset('assets/img/user-1.jpg') }}" class="img-fluid" alt="">
-                                    <span class="tes_quote"><i class="fa fa-quote-left"></i></span>
-                                </div>
-                                <div class="facts-detail">
-                                    <p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
-                                </div>
-                                <div class="_smart_testimons_info">
-                                    <h5>Lily Warliags</h5>
-                                    <div class="_ovr_posts"><span>CEO, Leader</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Items -->
-                        <div class="single_items">
-                            <div class="_smart_testimons">
-                                <div class="_smart_testimons_thumb">
-                                    <img src="{{ asset('assets/img/user-2.jpg') }}" class="img-fluid" alt="">
-                                    <span class="tes_quote"><i class="fa fa-quote-left"></i></span>
-                                </div>
-                                <div class="facts-detail">
-                                    <p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
-                                </div>
-                                <div class="_smart_testimons_info">
-                                    <h5>Carol B. Halton</h5>
-                                    <div class="_ovr_posts"><span>CEO, Leader</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Items -->
-                        <div class="single_items">
-                            <div class="_smart_testimons">
-                                <div class="_smart_testimons_thumb">
-                                    <img src="{{ asset('assets/img/user-3.jpg') }}" class="img-fluid" alt="">
-                                    <span class="tes_quote"><i class="fa fa-quote-left"></i></span>
-                                </div>
-                                <div class="facts-detail">
-                                    <p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
-                                </div>
-                                <div class="_smart_testimons_info">
-                                    <h5>Jesse L. Westberg</h5>
-                                    <div class="_ovr_posts"><span>CEO, Leader</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Items -->
-                        <div class="single_items">
-                            <div class="_smart_testimons">
-                                <div class="_smart_testimons_thumb">
-                                    <img src="{{ asset('assets/img/user-4.jpg') }}" class="img-fluid" alt="">
-                                    <span class="tes_quote"><i class="fa fa-quote-left"></i></span>
-                                </div>
-                                <div class="facts-detail">
-                                    <p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
-                                </div>
-                                <div class="_smart_testimons_info">
-                                    <h5>Elmer N. Rodriguez</h5>
-                                    <div class="_ovr_posts"><span>CEO, Leader</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Items -->
-                        <div class="single_items">
-                            <div class="_smart_testimons">
-                                <div class="_smart_testimons_thumb">
-                                    <img src="{{ asset('assets/img/user-5.jpg') }}" class="img-fluid" alt="">
-                                    <span class="tes_quote"><i class="fa fa-quote-left"></i></span>
-                                </div>
-                                <div class="facts-detail">
-                                    <p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
-                                </div>
-                                <div class="_smart_testimons_info">
-                                    <h5>Heather R. Sirianni</h5>
-                                    <div class="_ovr_posts"><span>CEO, Leader</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- ============================ Smart Testimonials End ================================== -->
-
-
-
-    <!-- ============================ List Tag Start ================================== -->
-    <section class="pt-0">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-
-                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
-                    <div class="text-center">
-                        <img src="{{ asset('assets/img/app.png') }}" class="img-fluid" alt="" />
-                    </div>
-                </div>
-
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <div class="eplios_tags right">
-                        <h2>Meet Agents & Fixed Your Deal</h2>
-                        <p>Whether you’re a real estate agent or have a team, or you’re thinking about a career in real estate, eXp Realty offers every agent the unique opportunity to become a shareholder in their own company, and celebrate the company’s financial success. Join more than 80,000+ agents worldwide who are growing their business, income, and skills with Atlantic residents properties.</p>
-                        <a href="{{ route('properties') }}" class="btn exliou theme-bg mt-2">Find Properties</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- ============================ Property Tag End ================================== -->
-
-    <!-- ============================ Top Agents ================================== -->
-    <section class="min gray">
-        <div class="container">
-
-            <div class="row justify-content-center">
-                <div class="col-lg-7 col-md-8">
-                    <div class="sec-heading center">
                         <h2>Our Featured Agents</h2>
-                        <p>Whether you are looking to buy, sell or rent, our experienced and passionate agents are on hand to help make it happen. Find the perfect agent for your needs below.</p>
+                        <p>Whether you're buying or selling a home, a Atlantic residents properties Agent is ready to deliver an extraordinary experience. Our agents bring a commitment to helping you make informed decisions by capitalizing on current market opportunities and trends.</p>
                     </div>
                 </div>
             </div>
@@ -439,7 +303,7 @@
 
                                     <div class="fr-grid-thumb">
                                         <a href="">
-                                            <img src="{{ asset('assets/img/team-1.jpg') }}" class="img-fluid mx-auto" alt="">
+                                            <img src="assets/img/team-1.jpg" class="img-fluid mx-auto" alt="">
                                         </a>
                                         <ul class="inline_social">
                                             <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -455,8 +319,7 @@
                                     </div>
 
                                     <div class="fr-infos-deatil">
-                                        <a href="#"  data-toggle="modal" data-target="#autho-message"
-                                           class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
+                                        <a href="#"  data-toggle="modal" data-target="#autho-message" class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
                                         <a href="#" class="btn agent-btn theme-black"><i class="fa fa-phone"></i></a>
                                     </div>
 
@@ -473,7 +336,7 @@
 
                                     <div class="fr-grid-thumb">
                                         <a href="">
-                                            <img src="{{ asset('assets/img/team-2.jpg') }}" class="img-fluid mx-auto" alt="">
+                                            <img src="assets/img/team-2.jpg" class="img-fluid mx-auto" alt="">
                                         </a>
                                         <ul class="inline_social">
                                             <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -489,8 +352,7 @@
                                     </div>
 
                                     <div class="fr-infos-deatil">
-                                        <a href="#"  data-toggle="modal" data-target="#autho-message"
-                                           class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
+                                        <a href="#"  data-toggle="modal" data-target="#autho-message" class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
                                         <a href="#" class="btn agent-btn theme-black"><i class="fa fa-phone"></i></a>
                                     </div>
 
@@ -507,7 +369,7 @@
 
                                     <div class="fr-grid-thumb">
                                         <a href="">
-                                            <img src="{{ asset('assets/img/team-3.jpg') }}" class="img-fluid mx-auto" alt="">
+                                            <img src="assets/img/team-3.jpg" class="img-fluid mx-auto" alt="">
                                         </a>
                                         <ul class="inline_social">
                                             <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -523,8 +385,7 @@
                                     </div>
 
                                     <div class="fr-infos-deatil">
-                                        <a href="#"  data-toggle="modal" data-target="#autho-message"
-                                           class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
+                                        <a href="#"  data-toggle="modal" data-target="#autho-message" class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
                                         <a href="#" class="btn agent-btn theme-black"><i class="fa fa-phone"></i></a>
                                     </div>
 
@@ -541,7 +402,7 @@
 
                                     <div class="fr-grid-thumb">
                                         <a href="">
-                                            <img src="{{ asset('assets/img/team-4.jpg') }}" class="img-fluid mx-auto" alt="">
+                                            <img src="assets/img/team-4.jpg" class="img-fluid mx-auto" alt="">
                                         </a>
                                         <ul class="inline_social">
                                             <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -557,8 +418,7 @@
                                     </div>
 
                                     <div class="fr-infos-deatil">
-                                        <a href="#"  data-toggle="modal" data-target="#autho-message"
-                                           class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
+                                        <a href="#"  data-toggle="modal" data-target="#autho-message" class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
                                         <a href="#" class="btn agent-btn theme-black"><i class="fa fa-phone"></i></a>
                                     </div>
 
@@ -575,7 +435,7 @@
 
                                     <div class="fr-grid-thumb">
                                         <a href="">
-                                            <img src="{{ asset('assets/img/team-5.jpg') }}" class="img-fluid mx-auto" alt="">
+                                            <img src="assets/img/team-5.jpg" class="img-fluid mx-auto" alt="">
                                         </a>
                                         <ul class="inline_social">
                                             <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -606,7 +466,33 @@
 
         </div>
     </section>
-    <!-- ============================ Top Agents End ================================== -->
+    <!-- ============================ Smart Testimonials End ================================== -->
+
+
+    <!-- ============================ List Tag Start ================================== -->
+    <section class="pt-4">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
+                    <div class="text-center">
+                        <img src="{{ asset('assets/img/app.png') }}" class="img-fluid" alt="" />
+                    </div>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="eplios_tags right">
+                        <h2>Meet Agents & Fixed Your Deal</h2>
+                        <p>Whether you’re a real estate agent or have a team, or you’re thinking about a career in real estate, eXp Realty offers every agent the unique opportunity to become a shareholder in their own company, and celebrate the company’s financial success. Join more than 80,000+ agents worldwide who are growing their business, income, and skills with Atlantic residents properties.</p>
+                        <a href="{{ route('properties') }}" class="btn exliou theme-bg mt-2">Find Properties</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Property Tag End ================================== -->
+
 
     <!-- ============================ Property Tag Start ================================== -->
     <section class="image-cover" style="background:#122947 url({{ asset('assets/img/slider-2.jpg') }}) no-repeat;" data-overlay="2">

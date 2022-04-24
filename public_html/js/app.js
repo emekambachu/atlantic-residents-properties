@@ -22920,7 +22920,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "RegisterLogin"
+  data: function data() {
+    return {
+      form: {
+        email: '',
+        password: ''
+      },
+      errors: [],
+      errorAlert: false,
+      messageAlert: '',
+      loginLoading: false
+    };
+  },
+  methods: {
+    submitLogin: function submitLogin() {
+      var _this = this;
+
+      this.loginLoading = true;
+      axios.post('/api/register', this.form).then(function (response) {
+        response.data.success === true ? [_this.errors = [], window.location.href = '/login'] : [response.data.message ? _this.errors.push(response.data.message) : false, _this.errors = response.data.errors];
+        console.log(response.data);
+      })["catch"](function (error) {})["finally"](function () {
+        _this.loginLoading = false;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -23605,29 +23629,99 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"gallery_parts pt-2 pb-2 d-none d-sm-none d-md-none d-lg-none d-xl-block\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-lg-8 col-md-7 col-sm-12 pr-1\"><div class=\"gg_single_part left\"><a href=\"/assets/img/p-2.png\" class=\"mfp-gallery\"><img src=\"/assets/img/p-2.png\" class=\"img-fluid mx-auto\" alt=\"\"></a></div></div><div class=\"col-lg-4 col-md-5 col-sm-12 pl-1\"><div class=\"gg_single_part-right min\"><a href=\"/assets/img/p-5.png\" class=\"mfp-gallery\"><img src=\"/assets/img/p-5.png\" class=\"img-fluid mx-auto\" alt=\"\"></a></div><div class=\"gg_single_part-right min mt-2 mb-2\"><a href=\"/assets/img/p-3.png\" class=\"mfp-gallery\"><img src=\"/assets/img/p-3.png\" class=\"img-fluid mx-auto\" alt=\"\"></a></div><div class=\"gg_single_part-right min\"><a href=\"/assets/img/p-4.png\" class=\"mfp-gallery\"><img src=\"/assets/img/p-4.png\" class=\"img-fluid mx-auto\" alt=\"\"></a></div></div></div></div></section><div class=\"featured_slick_gallery gray d-block d-md-block d-lg-block d-xl-none\"><div class=\"featured_slick_gallery-slide\"><div class=\"featured_slick_padd\"><a href=\"/assets/img/slider-2.jpg\" class=\"mfp-gallery\"><img src=\"/assets/img/slider-2.jpg\" class=\"img-fluid mx-auto\" alt=\"\"></a></div><div class=\"featured_slick_padd\"><a href=\"/assets/img/slider-3.jpg\" class=\"mfp-gallery\"><img src=\"/assets/img/slider-3.jpg\" class=\"img-fluid mx-auto\" alt=\"\"></a></div><div class=\"featured_slick_padd\"><a href=\"/assets/img/slider-4.jpg\" class=\"mfp-gallery\"><img src=\"/assets/img/slider-4.jpg\" class=\"img-fluid mx-auto\" alt=\"\"></a></div><div class=\"featured_slick_padd\"><a href=\"/assets/img/slider-5.jpg\" class=\"mfp-gallery\"><img src=\"/assets/img/slider-5.jpg\" class=\"img-fluid mx-auto\" alt=\"\"></a></div></div></div>", 2);
-
-var _hoisted_3 = {
-  "class": "pt-4"
+var _hoisted_1 = {
+  "class": "gallery_parts pt-2 pb-2 d-none d-sm-none d-md-none d-lg-none d-xl-block"
 };
-var _hoisted_4 = {
+var _hoisted_2 = {
   "class": "container"
 };
+var _hoisted_3 = {
+  "class": "row align-items-center"
+};
+var _hoisted_4 = {
+  "class": "col-lg-8 col-md-7 col-sm-12 pr-1"
+};
 var _hoisted_5 = {
+  "class": "gg_single_part left"
+};
+var _hoisted_6 = ["href"];
+var _hoisted_7 = ["src"];
+var _hoisted_8 = {
+  "class": "col-lg-4 col-md-5 col-sm-12 pl-1"
+};
+var _hoisted_9 = {
+  key: 0,
+  "class": "gg_single_part-right min"
+};
+var _hoisted_10 = ["href"];
+var _hoisted_11 = ["src"];
+var _hoisted_12 = {
+  key: 1,
+  "class": "gg_single_part-right min mt-2 mb-2"
+};
+var _hoisted_13 = ["href"];
+var _hoisted_14 = ["src"];
+var _hoisted_15 = {
+  key: 2,
+  "class": "gg_single_part-right min"
+};
+var _hoisted_16 = ["href"];
+var _hoisted_17 = ["src"];
+var _hoisted_18 = {
+  key: 3,
+  "class": "gg_single_part-right min"
+};
+var _hoisted_19 = ["href"];
+var _hoisted_20 = ["src"];
+var _hoisted_21 = {
+  "class": "featured_slick_gallery gray d-block d-md-block d-lg-block d-xl-none"
+};
+var _hoisted_22 = {
+  "class": "featured_slick_gallery-slide"
+};
+var _hoisted_23 = {
+  "class": "featured_slick_padd"
+};
+var _hoisted_24 = ["href"];
+var _hoisted_25 = ["src"];
+var _hoisted_26 = {
+  key: 0,
+  "class": "featured_slick_padd"
+};
+var _hoisted_27 = ["href"];
+var _hoisted_28 = ["src"];
+var _hoisted_29 = {
+  key: 1,
+  "class": "featured_slick_padd"
+};
+var _hoisted_30 = ["href"];
+var _hoisted_31 = ["src"];
+var _hoisted_32 = {
+  key: 2,
+  "class": "featured_slick_padd"
+};
+var _hoisted_33 = ["href"];
+var _hoisted_34 = ["src"];
+var _hoisted_35 = {
+  "class": "pt-4"
+};
+var _hoisted_36 = {
+  "class": "container"
+};
+var _hoisted_37 = {
   "class": "row"
 };
-var _hoisted_6 = {
+var _hoisted_38 = {
   "class": "col-lg-8 col-md-12 col-sm-12"
 };
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_info_detail_wrap mb-4\"><div class=\"property_info_detail_wrap_first\"><div class=\"pr-price-into\"><ul class=\"prs_lists\"><li><span class=\"bed\">3 Beds</span></li><li><span class=\"bath\">2 Bath</span></li><li><span class=\"gar\">1 Garage</span></li><li><span class=\"sqft\">800 sqft</span></li></ul><h2>5689 Resot Relly Market, Montreal Canada, HAQC445</h2><span><i class=\"lni-map-marker\"></i> 778 Country St. Panama City, FL</span></div></div><div class=\"property_detail_section\"><div class=\"prt-sect-pric\"><ul class=\"_share_lists\"><li><a href=\"#\"><i class=\"fa fa-bookmark\"></i></a></li><li><a href=\"#\"><i class=\"fa fa-share\"></i></a></li></ul></div></div></div>", 1);
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_info_detail_wrap mb-4\"><div class=\"property_info_detail_wrap_first\"><div class=\"pr-price-into\"><ul class=\"prs_lists\"><li><span class=\"bed\">3 Beds</span></li><li><span class=\"bath\">2 Bath</span></li><li><span class=\"gar\">1 Garage</span></li><li><span class=\"sqft\">800 sqft</span></li></ul><h2>5689 Resot Relly Market, Montreal Canada, HAQC445</h2><span><i class=\"lni-map-marker\"></i> 778 Country St. Panama City, FL</span></div></div><div class=\"property_detail_section\"><div class=\"prt-sect-pric\"><ul class=\"_share_lists\"><li><a href=\"#\"><i class=\"fa fa-bookmark\"></i></a></li><li><a href=\"#\"><i class=\"fa fa-share\"></i></a></li></ul></div></div></div>", 1);
 
-var _hoisted_8 = {
+var _hoisted_40 = {
   "class": "property_block_wrap"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "property_block_wrap_header"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
   "class": "property_block_title"
@@ -23635,24 +23729,146 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_10 = {
+var _hoisted_42 = {
   "class": "block-body"
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Advance Features</h4></div><div class=\"block-body\"><ul class=\"row p-0 m-0\"><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-bed mr-1\"></i>4 Bedrooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-bath mr-1\"></i>2 Bathrooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-expand-arrows-alt mr-1\"></i>12400 sqft</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-house-damage mr-1\"></i>1 Living Rooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-building mr-1\"></i>Build 2007</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-utensils mr-1\"></i>2 Kitchens </li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-car mr-1\"></i>Car Parking</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-briefcase-medical mr-1\"></i>Free Medical</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-fire mr-1\"></i>Fireplace</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-layer-group mr-1\"></i>Residential</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-tv mr-1\"></i>TV Cable</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-spa mr-1\"></i>Free Spa</li></ul></div></div>", 1);
+var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Advance Features</h4></div><div class=\"block-body\"><ul class=\"row p-0 m-0\"><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-bed mr-1\"></i>4 Bedrooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-bath mr-1\"></i>2 Bathrooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-expand-arrows-alt mr-1\"></i>12400 sqft</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-house-damage mr-1\"></i>1 Living Rooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-building mr-1\"></i>Build 2007</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-utensils mr-1\"></i>2 Kitchens </li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-car mr-1\"></i>Car Parking</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-briefcase-medical mr-1\"></i>Free Medical</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-fire mr-1\"></i>Fireplace</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-layer-group mr-1\"></i>Residential</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-tv mr-1\"></i>TV Cable</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-spa mr-1\"></i>Free Spa</li></ul></div></div>", 1);
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Ameneties</h4></div><div class=\"block-body\"><ul class=\"avl-features third\"><li class=\"active\">Air Conditioning</li><li class=\"active\">Swimming Pool</li><li class=\"active\">Central Heating</li><li class=\"active\">Laundry Room</li><li class=\"active\">Gym</li><li class=\"active\">Alarm</li><li class=\"active\">Window Covering</li><li class=\"active\">Internet</li><li class=\"active\">Pets Allow</li><li class=\"active\">Free WiFi</li><li>Car Parking</li><li>Spa &amp; Massage</li></ul></div></div>", 1);
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Ameneties</h4></div><div class=\"block-body\"><ul class=\"avl-features third\"><li class=\"active\">Air Conditioning</li><li class=\"active\">Swimming Pool</li><li class=\"active\">Central Heating</li><li class=\"active\">Laundry Room</li><li class=\"active\">Gym</li><li class=\"active\">Alarm</li><li class=\"active\">Window Covering</li><li class=\"active\">Internet</li><li class=\"active\">Pets Allow</li><li class=\"active\">Free WiFi</li><li>Car Parking</li><li>Spa &amp; Massage</li></ul></div></div>", 1);
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Write a Review</h4></div><div class=\"block-body\"><div class=\"row\"><div class=\"col-lg-6 col-md-6 col-sm-12\"><div class=\"form-group\"><label>Name</label><input type=\"text\" class=\"form-control\"></div></div><div class=\"col-lg-6 col-md-6 col-sm-12\"><div class=\"form-group\"><label>eMmail ID</label><input type=\"email\" class=\"form-control\"></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"form-group\"><label>Messages</label><textarea class=\"form-control ht-80\"></textarea></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"form-group\"><button class=\"btn theme-bg rounded\" type=\"submit\">Submit Review</button></div></div></div></div></div>", 1);
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Write a Review</h4></div><div class=\"block-body\"><div class=\"row\"><div class=\"col-lg-6 col-md-6 col-sm-12\"><div class=\"form-group\"><label>Name</label><input type=\"text\" class=\"form-control\"></div></div><div class=\"col-lg-6 col-md-6 col-sm-12\"><div class=\"form-group\"><label>eMmail ID</label><input type=\"email\" class=\"form-control\"></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"form-group\"><label>Messages</label><textarea class=\"form-control ht-80\"></textarea></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"form-group\"><button class=\"btn theme-bg rounded\" type=\"submit\">Submit Review</button></div></div></div></div></div>", 1);
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-lg-4 col-md-12 col-sm-12\"><div class=\"property-sidebar\"><div class=\"sider_blocks_wrap\"><div class=\"side-booking-header\"><div class=\"sb-header-left\"><h3 class=\"price\">$470<sub>/Night</sub><span class=\"offs\">$510</span></h3></div><div class=\"price_offer\">20% Off</div></div><div class=\"side-booking-body\"><div class=\"row\"><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><label>Check In</label><div class=\"cld-box\"><i class=\"ti-calendar\"></i><input type=\"text\" name=\"checkin\" class=\"form-control\" value=\"10/24/2020\"></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><label>Check Out</label><div class=\"cld-box\"><i class=\"ti-calendar\"></i><input type=\"text\" name=\"checkout\" class=\"form-control\" value=\"10/24/2020\"></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><div><label for=\"guests\">Adults</label><div class=\"guests-box\"><button class=\"counter-btn\" type=\"button\" id=\"cnt-down\"><i class=\"ti-minus\"></i></button><input type=\"text\" id=\"guestNo\" name=\"guests\" value=\"2\"><button class=\"counter-btn\" type=\"button\" id=\"cnt-up\"><i class=\"ti-plus\"></i></button></div></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><div class=\"guests\"><label>Kids</label><div class=\"guests-box\"><button class=\"counter-btn\" type=\"button\" id=\"kcnt-down\"><i class=\"ti-minus\"></i></button><input type=\"text\" id=\"kidsNo\" name=\"kids\" value=\"0\"><button class=\"counter-btn\" type=\"button\" id=\"kcnt-up\"><i class=\"ti-plus\"></i></button></div></div></div></div><div class=\"col-lg12 col-md-12 col-sm-12 mt-3\"><label for=\"guests\">Advance features</label><div class=\"_adv_features_list\"><ul class=\"no-ul-list\"><li><input id=\"a-1\" class=\"checkbox-custom\" name=\"a-1\" type=\"checkbox\"><label for=\"a-1\" class=\"checkbox-custom-label\">Air Condition<i>$10</i></label></li><li><input id=\"a-2\" class=\"checkbox-custom\" name=\"a-2\" type=\"checkbox\" checked><label for=\"a-2\" class=\"checkbox-custom-label\">Bedding<i>$07</i></label></li><li><input id=\"a-3\" class=\"checkbox-custom\" name=\"a-3\" type=\"checkbox\" checked><label for=\"a-3\" class=\"checkbox-custom-label\">Heating<i>$20</i></label></li><li><input id=\"a-4\" class=\"checkbox-custom\" name=\"a-4\" type=\"checkbox\"><label for=\"a-4\" class=\"checkbox-custom-label\">Internet<i>$10</i></label></li><li><input id=\"a-5\" class=\"checkbox-custom\" name=\"a-5\" type=\"checkbox\"><label for=\"a-5\" class=\"checkbox-custom-label\">Microwave<i>$05</i></label></li></ul></div></div><div class=\"col-lg12 col-md-12 col-sm-12 mt-3\"><label for=\"guests\">Price &amp; Tax</label><div class=\"_adv_features\"><ul><li>I Night<span>$310</span></li><li>Discount 25$<span>-$250</span></li><li>Service Fee<span>$17</span></li><li>Breakfast Per Adult<span>$35</span></li></ul></div></div><div class=\"side-booking-foot\"><span class=\"sb-header-left\">Total Payment</span><h3 class=\"price theme-cl\">$170</h3></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"stbooking-footer mt-1\"><div class=\"form-group mb-0 pb-0\"><a href=\"#\" class=\"btn book_btn theme-bg\">Book It Now</a></div></div></div></div></div></div><!-- Agent Detail --><div class=\"sider_blocks_wrap\"><div class=\"side-booking-body\"><div class=\"agent-_blocks_title\"><div class=\"agent-_blocks_thumb\"><img src=\"assets/img/user-6.jpg\" alt=\"\"></div><div class=\"agent-_blocks_caption\"><h4><a href=\"#\">Shivangi Preet</a></h4><span class=\"approved-agent\"><i class=\"ti-check\"></i>approved</span></div><div class=\"clearfix\"></div></div><a href=\"#\" class=\"agent-btn-contact\" data-toggle=\"modal\" data-target=\"#autho-message\"><i class=\"ti-comment-alt\"></i>Message</a><span id=\"number\" data-last=\"+1234567896\"><span><i class=\"ti-headphone-alt\"></i><a class=\"see\">+355(44)35...Show</a></span></span></div></div><!-- Mortgage Calculator --><div class=\"sider_blocks_wrap\"><div class=\"side-booking-header\"><h4 class=\"m-0\">Mortgage Calculator</h4></div><div class=\"sider-block-body p-3\"><div class=\"form-group\"><div class=\"input-with-icon\"><input type=\"text\" class=\"form-control light\" placeholder=\"Sale Price\"><i class=\"ti-money\"></i></div></div><div class=\"form-group\"><div class=\"input-with-icon\"><input type=\"text\" class=\"form-control light\" placeholder=\"Down Payment\"><i class=\"ti-money\"></i></div></div><div class=\"form-group\"><div class=\"input-with-icon\"><input type=\"text\" class=\"form-control light\" placeholder=\"Loan Term (Years)\"><i class=\"ti-calendar\"></i></div></div><div class=\"form-group\"><div class=\"input-with-icon\"><input type=\"text\" class=\"form-control light\" placeholder=\"Interest Rate\"><i class=\"fa fa-percent\"></i></div></div><div class=\"mortgage mb-2\">Monthly Payment: 22742.10 $</div><button class=\"btn book_btn theme-bg\">Calculate</button></div></div><!-- Similar Property --><div class=\"sidebar-widgets\"><h4>Similar Property</h4><div class=\"sidebar_featured_property\"><!-- List Sibar Property --><div class=\"sides_list_property\"><div class=\"sides_list_property_thumb\"><img src=\"assets/img/p-1.png\" class=\"img-fluid\" alt=\"\"></div><div class=\"sides_list_property_detail\"><h4><a href=\"\">Loss vengel New Apartment</a></h4><span><i class=\"ti-location-pin\"></i>Sans Fransico</span><div class=\"lists_property_price\"><div class=\"lists_property_types\"><div class=\"property_types_vlix sale\">For Sale</div></div><div class=\"lists_property_price_value\"><h4>$4,240</h4></div></div></div></div><!-- List Sibar Property --><div class=\"sides_list_property\"><div class=\"sides_list_property_thumb\"><img src=\"assets/img/p-4.png\" class=\"img-fluid\" alt=\"\"></div><div class=\"sides_list_property_detail\"><h4><a href=\"single-property-1.html\">Montreal Quriqe Apartment</a></h4><span><i class=\"ti-location-pin\"></i>Liverpool, London</span><div class=\"lists_property_price\"><div class=\"lists_property_types\"><div class=\"property_types_vlix\">For Rent</div></div><div class=\"lists_property_price_value\"><h4>$7,380</h4></div></div></div></div><!-- List Sibar Property --><div class=\"sides_list_property\"><div class=\"sides_list_property_thumb\"><img src=\"assets/img/p-7.png\" class=\"img-fluid\" alt=\"\"></div><div class=\"sides_list_property_detail\"><h4><a href=\"single-property-1.html\">Curmic Studio For Office</a></h4><span><i class=\"ti-location-pin\"></i>Montreal, Canada</span><div class=\"lists_property_price\"><div class=\"lists_property_types\"><div class=\"property_types_vlix buy\">For Buy</div></div><div class=\"lists_property_price_value\"><h4>$8,730</h4></div></div></div></div><!-- List Sibar Property --><div class=\"sides_list_property\"><div class=\"sides_list_property_thumb\"><img src=\"assets/img/p-5.png\" class=\"img-fluid\" alt=\"\"></div><div class=\"sides_list_property_detail\"><h4><a href=\"single-property-1.html\">Montreal Quebec City</a></h4><span><i class=\"ti-location-pin\"></i>Sreek View, New York</span><div class=\"lists_property_price\"><div class=\"lists_property_types\"><div class=\"property_types_vlix\">For Rent</div></div><div class=\"lists_property_price_value\"><h4>$6,240</h4></div></div></div></div></div></div></div></div>", 1);
+var _hoisted_46 = {
+  "class": "col-lg-4 col-md-12 col-sm-12"
+};
+var _hoisted_47 = {
+  "class": "property-sidebar"
+};
+var _hoisted_48 = {
+  "class": "sider_blocks_wrap"
+};
+var _hoisted_49 = {
+  "class": "side-booking-header"
+};
+var _hoisted_50 = {
+  "class": "sb-header-left"
+};
+var _hoisted_51 = {
+  "class": "price"
+};
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"theme-bg call_action_wrap-wrap\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-12\"><div class=\"call_action_wrap\"><div class=\"call_action_wrap-head\"><h3>Do You Have Questions ?</h3><span>We&#39;ll help you to grow your career and growth.</span></div><a href=\"#\" class=\"btn btn-call_action_wrap\">Contact Us Today</a></div></div></div></div></section>", 1);
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"side-booking-body\"><div class=\"row\"><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><label>Check In</label><div class=\"cld-box\"><i class=\"ti-calendar\"></i><input type=\"text\" name=\"checkin\" class=\"form-control\" value=\"10/24/2020\"></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><label>Check Out</label><div class=\"cld-box\"><i class=\"ti-calendar\"></i><input type=\"text\" name=\"checkout\" class=\"form-control\" value=\"10/24/2020\"></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><div><label for=\"guests\">Adults</label><div class=\"guests-box\"><button class=\"counter-btn\" type=\"button\" id=\"cnt-down\"><i class=\"ti-minus\"></i></button><input type=\"text\" id=\"guestNo\" name=\"guests\" value=\"2\"><button class=\"counter-btn\" type=\"button\" id=\"cnt-up\"><i class=\"ti-plus\"></i></button></div></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><div class=\"guests\"><label>Kids</label><div class=\"guests-box\"><button class=\"counter-btn\" type=\"button\" id=\"kcnt-down\"><i class=\"ti-minus\"></i></button><input type=\"text\" id=\"kidsNo\" name=\"kids\" value=\"0\"><button class=\"counter-btn\" type=\"button\" id=\"kcnt-up\"><i class=\"ti-plus\"></i></button></div></div></div></div><div class=\"col-lg12 col-md-12 col-sm-12 mt-3\"><label for=\"guests\">Advance features</label><div class=\"_adv_features_list\"><ul class=\"no-ul-list\"><li><input id=\"a-1\" class=\"checkbox-custom\" name=\"a-1\" type=\"checkbox\"><label for=\"a-1\" class=\"checkbox-custom-label\">Air Condition<i>$10</i></label></li><li><input id=\"a-2\" class=\"checkbox-custom\" name=\"a-2\" type=\"checkbox\" checked><label for=\"a-2\" class=\"checkbox-custom-label\">Bedding<i>$07</i></label></li><li><input id=\"a-3\" class=\"checkbox-custom\" name=\"a-3\" type=\"checkbox\" checked><label for=\"a-3\" class=\"checkbox-custom-label\">Heating<i>$20</i></label></li><li><input id=\"a-4\" class=\"checkbox-custom\" name=\"a-4\" type=\"checkbox\"><label for=\"a-4\" class=\"checkbox-custom-label\">Internet<i>$10</i></label></li><li><input id=\"a-5\" class=\"checkbox-custom\" name=\"a-5\" type=\"checkbox\"><label for=\"a-5\" class=\"checkbox-custom-label\">Microwave<i>$05</i></label></li></ul></div></div><div class=\"col-lg12 col-md-12 col-sm-12 mt-3\"><label for=\"guests\">Price &amp; Tax</label><div class=\"_adv_features\"><ul><li>I Night<span>$310</span></li><li>Discount 25$<span>-$250</span></li><li>Service Fee<span>$17</span></li><li>Breakfast Per Adult<span>$35</span></li></ul></div></div><div class=\"side-booking-foot\"><span class=\"sb-header-left\">Total Payment</span><h3 class=\"price theme-cl\">$170</h3></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"stbooking-footer mt-1\"><div class=\"form-group mb-0 pb-0\"><a href=\"#\" class=\"btn book_btn theme-bg\">Book It Now</a></div></div></div></div></div>", 1);
+
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"sider_blocks_wrap\"><div class=\"side-booking-body\"><div class=\"agent-_blocks_title\"><div class=\"agent-_blocks_thumb\"><img src=\"/assets/img/user-6.jpg\" alt=\"\"></div><div class=\"agent-_blocks_caption\"><h4><a href=\"#\">Shivangi Preet</a></h4><span class=\"approved-agent\"><i class=\"ti-check\"></i>approved</span></div><div class=\"clearfix\"></div></div><a href=\"#\" class=\"agent-btn-contact\" data-toggle=\"modal\" data-target=\"#autho-message\"><i class=\"ti-comment-alt\"></i>Message</a><span id=\"number\" data-last=\"+1234567896\"><span><i class=\"ti-headphone-alt\"></i><a class=\"see\"> +355(44)35...Show</a></span></span></div></div>", 1);
+
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"theme-bg call_action_wrap-wrap\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-12\"><div class=\"call_action_wrap\"><div class=\"call_action_wrap-head\"><h3>Do You Have Questions ?</h3><span>We&#39;ll help you to grow your career and growth.</span></div><a href=\"#\" class=\"btn btn-call_action_wrap\">Contact Us Today</a></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Hero Banner  Start================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Gallery Part Start "), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Hero Banner End ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Property Detail Start ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" property main detail "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.description), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Hero Banner  Start================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Gallery Part Start "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image1,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image1,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_7)], 8
+  /* PROPS */
+  , _hoisted_6)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [$props.property.image2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image2,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image2,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_11)], 8
+  /* PROPS */
+  , _hoisted_10)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.property.image3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image3,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image3,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_14)], 8
+  /* PROPS */
+  , _hoisted_13)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.property.image4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image4,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image4,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_17)], 8
+  /* PROPS */
+  , _hoisted_16)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.property.image5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image5,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image5,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_20)], 8
+  /* PROPS */
+  , _hoisted_19)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image1,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image1,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_25)], 8
+  /* PROPS */
+  , _hoisted_24)]), $props.property.image2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image2,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image2,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_28)], 8
+  /* PROPS */
+  , _hoisted_27)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.property.image3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image3,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image3,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_31)], 8
+  /* PROPS */
+  , _hoisted_30)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.property.image4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: '/photos/properties/' + $props.property.image4,
+    "class": "mfp-gallery"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/photos/properties/' + $props.property.image4,
+    "class": "img-fluid mx-auto",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_34)], 8
+  /* PROPS */
+  , _hoisted_33)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Hero Banner End ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Property Detail Start ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" property main detail "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.description), 1
   /* TEXT */
-  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Write a Review "), _hoisted_13]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" property Sidebar "), _hoisted_14])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Property Detail End ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Call To Action ================================== "), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Call To Action End ================================== ")], 64
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), _hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Write a Review "), _hoisted_45]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" property Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_51, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.cost), 1
+  /* TEXT */
+  )])]), _hoisted_52]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Agent Detail "), _hoisted_53])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Property Detail End ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Call To Action ================================== "), _hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Call To Action End ================================== ")], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -23821,7 +24037,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     alt: ""
   }, null, 8
   /* PROPS */
-  , _hoisted_14)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.location), 1
+  , _hoisted_14)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.country.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <span class=\"_list_blickes types\">Family</span>")]), _hoisted_20]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.title), 1
   /* TEXT */
@@ -23999,167 +24215,184 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "resp_log_wrap"
+  "class": "row justify-content-center mt-4"
+};
+var _hoisted_2 = {
+  "class": "col-lg-8 col-md-7"
+};
+var _hoisted_3 = {
+  "class": "property_block_wrap"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "resp_log_thumb",
-  style: {
-    "background": "url('/assets/img/log.jpg')no-repeat"
-  }
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "property_block_wrap_header"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  "class": "property_block_title"
+}, "Register")], -1
+/* HOISTED */
+);
+
+var _hoisted_5 = {
+  key: 0,
+  "class": "justify-content-center text-center"
+};
+var _hoisted_6 = {
+  "class": "justify-content-center text-center"
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  width: "100",
+  src: "/images/loaders/loader.gif"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "resp_log_caption"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "mod-close",
-  "data-dismiss": "modal",
-  "aria-hidden": "true"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-close"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "edlio_152"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "nav nav-pills tabs_system center",
-  id: "pills-tab",
-  role: "tablist"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link active",
-  id: "pills-login-tab",
-  "data-toggle": "pill",
-  href: "#pills-login",
-  role: "tab",
-  "aria-controls": "pills-login",
-  "aria-selected": "true"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-sign-in-alt mr-2"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Login")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link",
-  id: "pills-signup-tab",
-  "data-toggle": "pill",
-  href: "#pills-signup",
-  role: "tab",
-  "aria-controls": "pills-signup",
-  "aria-selected": "false"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-user-plus mr-2"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "tab-content",
-  id: "pills-tabContent"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "tab-pane fade show active",
-  id: "pills-login",
-  role: "tabpanel",
-  "aria-labelledby": "pills-login-tab"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "login-form"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_8 = [_hoisted_7];
+var _hoisted_9 = {
+  "class": "block-body"
+};
+var _hoisted_10 = {
+  "class": "row"
+};
+var _hoisted_11 = {
+  "class": "col-lg-6 col-md-12"
+};
+var _hoisted_12 = {
   "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "User Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "input-with-icon"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "text",
-  "class": "form-control"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-user"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Password"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "input-with-icon"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "password",
-  "class": "form-control"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-unlock"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "eltio_ol9"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "eltio_k1"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  id: "dd",
-  "class": "checkbox-custom",
-  name: "dd",
-  type: "checkbox"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "dd",
-  "class": "checkbox-custom-label"
-}, "Remember Me")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "eltio_k2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, "Lost Your Password?")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "submit",
-  "class": "btn btn-md full-width pop-login"
-}, "Login")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "tab-pane fade",
-  id: "pills-signup",
-  role: "tabpanel",
-  "aria-labelledby": "pills-signup-tab"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "login-form"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Full Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "input-with-icon"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "text",
-  "class": "form-control"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-user"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Email ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "input-with-icon"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "email",
-  "class": "form-control"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-user"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Password"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "input-with-icon"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "password",
-  "class": "form-control"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-unlock"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "eltio_ol9"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "eltio_k1"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  id: "dds",
-  "class": "checkbox-custom",
-  name: "dds",
-  type: "checkbox"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "dds",
-  "class": "checkbox-custom-label"
-}, "By using the website, you accept the terms and conditions")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "submit",
-  "class": "btn btn-md full-width pop-login"
-}, "Register")])])])])])], -1
+};
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Name", -1
 /* HOISTED */
 );
 
-var _hoisted_4 = [_hoisted_2, _hoisted_3];
+var _hoisted_14 = {
+  key: 0,
+  "class": "text-danger text-center m-0"
+};
+var _hoisted_15 = {
+  "class": "col-lg-6 col-md-12"
+};
+var _hoisted_16 = {
+  "class": "form-group"
+};
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Email", -1
+/* HOISTED */
+);
+
+var _hoisted_18 = {
+  key: 0,
+  "class": "text-danger text-center m-0"
+};
+var _hoisted_19 = {
+  "class": "col-lg-6 col-md-12"
+};
+var _hoisted_20 = {
+  "class": "form-group"
+};
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Password", -1
+/* HOISTED */
+);
+
+var _hoisted_22 = {
+  key: 0,
+  "class": "text-danger text-center m-0"
+};
+var _hoisted_23 = {
+  "class": "col-lg-6 col-md-12"
+};
+var _hoisted_24 = {
+  "class": "form-group"
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Confirm Password", -1
+/* HOISTED */
+);
+
+var _hoisted_26 = {
+  key: 0,
+  "class": "text-danger text-center m-0"
+};
+
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "form-group"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "btn btn-theme",
+  type: "submit"
+}, "Submit")], -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_4);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" row Start "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error, key) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", {
+      key: key
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error), 1
+    /* TEXT */
+    );
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, _hoisted_8, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.loginLoading]]), !$data.loginLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
+    key: 1,
+    onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.submitLogin && $options.submitLogin.apply($options, arguments);
+    }, ["prevent"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.form.email = $event;
+    }),
+    type: "email",
+    name: "email",
+    "class": "form-control simple",
+    required: ""
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]]), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email.toString()), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.form.email = $event;
+    }),
+    type: "email",
+    name: "email",
+    "class": "form-control simple",
+    required: ""
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]]), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email.toString()), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.form.password = $event;
+    }),
+    type: "password",
+    name: "password",
+    "class": "form-control simple",
+    required: ""
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.password]]), $data.errors.password ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.password.toString()), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return $data.form.password = $event;
+    }),
+    type: "password",
+    name: "password",
+    "class": "form-control simple",
+    required: ""
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.password]]), $data.errors.password ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.password.toString()), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_27])], 32
+  /* HYDRATE_EVENTS */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /row ")], 2112
+  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  );
 }
 
 /***/ }),
