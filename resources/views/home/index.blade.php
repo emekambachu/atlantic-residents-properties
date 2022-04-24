@@ -22,7 +22,7 @@
 
             <div class="row">
                 <div class="col-xl-7 col-lg-8 col-md-10">
-                    <h2 class="big-header-capt mb-4">Find Your Next<br>Perfect <span class="theme-cl">Place</span> To<br> Live.</h2>
+                    <h2 class="big-header-capt mb-4 text-white">Find Your Next<br>Perfect <span class="theme-cl">Place</span> To<br> Live.</h2>
                 </div>
             </div>
 
@@ -114,6 +114,34 @@
         </div>
     </div>
     <!-- ============================ Hero Banner End ================================== -->
+
+    <!-- ============================ List Tag Start ================================== -->
+    <section>
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="eplios_tags">
+                        <h2>Atlantic Residents Properties</h2>
+                        <p>Buying a home is one of the most important decisions you will make, and our local experts at eXp Realty are here to make the process as easy as possible. Atlantic Residents Properties is one of the world’s fastest-growing real estate brokerages. Founded in 2009, we are now in 18 countries around the world with a community of over 80,000+ real estate professionals, all connected through our unique cloud-based platform.</p>
+                        <ul class="eplios_list">
+                            <li>100% Money Gaurantee</li>
+                            <li>Super & Perfect Place</li>
+                            <li>Effective & Best Price</li>
+                            <li>Friendly & Lovely Area</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
+                    <div class="text-center">
+                        <img src="{{ asset('assets/img/tag.png') }}" class="img-fluid" alt="" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Property Tag End ================================== -->
 
     <!-- ============================ Property Type Start ================================== -->
     <section class="light-bg min">
@@ -240,7 +268,9 @@
 
             <div class="row justify-content-center">
 
-                <home-properties :properties="{{ $properties }}"></home-properties>
+                @foreach($properties as $property)
+                <home-sample-properties :property="{{ $property }}"></home-sample-properties>
+                @endforeach
 
             </div>
 
@@ -358,34 +388,7 @@
     </section>
     <!-- ============================ Smart Testimonials End ================================== -->
 
-    <!-- ============================ List Tag Start ================================== -->
-    <section>
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <div class="eplios_tags">
-                        <div class="tags-1">01</div>
-                        <h2>Search & Find Perfect Place</h2>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-                        <ul class="eplios_list">
-                            <li>100% Money Gaurantee</li>
-                            <li>Super & Perfect Place</li>
-                            <li>Effective & Best Price</li>
-                            <li>Friendly & Lovely Area</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
-                    <div class="text-center">
-                        <img src="{{ asset('assets/img/tag.png') }}" class="img-fluid" alt="" />
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- ============================ Property Tag End ================================== -->
 
     <!-- ============================ List Tag Start ================================== -->
     <section class="pt-0">
@@ -400,10 +403,9 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="eplios_tags right">
-                        <div class="tags-2">02</div>
                         <h2>Meet Agents & Fixed Your Deal</h2>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-                        <a href="#" class="btn exliou theme-bg mt-2">Find Properties</a>
+                        <p>Whether you’re a real estate agent or have a team, or you’re thinking about a career in real estate, eXp Realty offers every agent the unique opportunity to become a shareholder in their own company, and celebrate the company’s financial success. Join more than 80,000+ agents worldwide who are growing their business, income, and skills with Atlantic residents properties.</p>
+                        <a href="{{ route('properties') }}" class="btn exliou theme-bg mt-2">Find Properties</a>
                     </div>
                 </div>
 
@@ -420,7 +422,7 @@
                 <div class="col-lg-7 col-md-8">
                     <div class="sec-heading center">
                         <h2>Our Featured Agents</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <p>Whether you are looking to buy, sell or rent, our experienced and passionate agents are on hand to help make it happen. Find the perfect agent for your needs below.</p>
                     </div>
                 </div>
             </div>
@@ -572,7 +574,7 @@
                                 <div class="grid_agents-wrap">
 
                                     <div class="fr-grid-thumb">
-                                        <a href="agent-page.html">
+                                        <a href="">
                                             <img src="{{ asset('assets/img/team-5.jpg') }}" class="img-fluid mx-auto" alt="">
                                         </a>
                                         <ul class="inline_social">
@@ -614,8 +616,8 @@
 
                     <div class="tab_exclusive">
                         <h2>Are You Searching Perfect Place For your Dream?</h2>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi</p>
-                        <a href="#" class="btn exliou theme-bg mt-2">Find Properties</a>
+                        <p>With the limited number of homes on the current U.S. market, you need an agent with the right connections, technology and strategies to achieve your home buying or selling vision. Whether you're feeling overwhelmed and want someone to take the wheel, or you just need a second opinion and you have it covered, you can be rest assured a Atlantic resident properties is the right agent for any level of service, in any market condition.'</p>
+                        <a href="{{ route('properties') }}" class="btn exliou theme-bg mt-2">Find Properties</a>
                     </div>
 
                 </div>
@@ -637,9 +639,8 @@
                     <div class="call_action_wrap">
                         <div class="call_action_wrap-head">
                             <h3>Do You Have Questions ?</h3>
-                            <span>We'll help you to grow your career and growth.</span>
                         </div>
-                        <a href="#" class="btn btn-call_action_wrap">Contact Us Today</a>
+                        <a href="{{ url('/contact') }}" class="btn btn-call_action_wrap">Contact Us Today</a>
                     </div>
 
                 </div>

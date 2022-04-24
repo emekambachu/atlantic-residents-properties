@@ -1,6 +1,5 @@
 <template>
-    <div v-for="(property, index) in properties" :key="property.id"
-         class="col-lg-4 col-md-6 col-sm-12">
+    <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="property-listing property-2">
             <div class="listing-img-wrapper">
                 <div class="_exlio_125">{{ property.country.name }}</div>
@@ -23,8 +22,8 @@
                 <div class="listing-short-detail-wrap">
                     <div class="_card_list_flex mb-2">
                         <div class="_card_flex_01">
-                            <span class="_list_blickes _netork">6 Network</span>
-                            <span class="_list_blickes types">Family</span>
+                            <span class="_list_blickes _netork">{{ property.location }}</span>
+<!--                            <span class="_list_blickes types">Family</span>-->
                         </div>
                         <div class="_card_flex_last">
                             <div class="prt_saveed_12lk">
@@ -36,8 +35,8 @@
                     <div class="_card_list_flex">
                         <div class="_card_flex_01">
                             <h4 class="listing-name verified">
-                                <a href="single-property-1.html" class="prt-link-detail">
-                                    {{ property.address }}</a></h4>
+                                <a href="" class="prt-link-detail">
+                                    {{ property.title }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -68,7 +67,7 @@
                     <h6 class="listing-card-info-price mb-0 p-0">${{ property.cost }}</h6>
                 </div>
                 <div class="footer-flex">
-                    <a :href="'/property/' + property.id + ''" class="prt-view">View Detail</a>
+                    <a :href="'/property/' + property.id + '/detail'" class="prt-view">View Detail</a>
                 </div>
             </div>
 
@@ -80,7 +79,7 @@
 <script>
     export default {
         props: {
-            properties: Object
+            property: Object
         },
         data(){
             return{

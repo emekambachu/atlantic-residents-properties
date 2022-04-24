@@ -32,9 +32,9 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="contact-box">
                         <i class="ti-shopping-cart theme-cl"></i>
-                        <h4>Contact Sales</h4>
-                        <p>sales@rikadahelp.co.uk</p>
-                        <span>+01 215 245 6258</span>
+                        <h4>Contact us</h4>
+                        <p>info@atlanticresidentsproperties</p>
+                        <span>+1 318-309-7154</span>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                     <div class="contact-box">
                         <i class="ti-user theme-cl"></i>
                         <h4>Contact Sales</h4>
-                        <p>sales@rikadahelp.co.uk</p>
+                        <p>sales@atlanticresidentsproperties</p>
                         <span>+01 215 245 6258</span>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                     <div class="property_block_wrap">
 
                         <div class="property_block_wrap_header">
-                            <h4 class="property_block_title">Fillup The Form</h4>
+                            <h4 class="property_block_title">Fill The Form</h4>
                         </div>
 
                         <div class="block-body">
@@ -102,10 +102,6 @@
 
                 </div>
 
-                <div class="col-lg-4 col-md-5">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3559.303346004152!2d81.00657231451953!3d26.86210176873481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1621502911489!5m2!1sen!2sin"
-                            style="border:0;" allowfullscreen="" loading="lazy" width="100%" height="470"></iframe>
-                </div>
 
             </div>
             <!-- /row -->

@@ -31,7 +31,8 @@ window.Swal = Swal;
 // Home Components
 import Register from './components/home/Register';
 import Login from './components/home/Login';
-import HomeProperties from './components/home/HomeProperties';
+import HomeSampleProperties from './components/home/HomeSampleProperties';
+import HomePropertyDetail from './components/home/HomePropertyDetail';
 
 import DashboardComponent from './components/user/DashboardComponent';
 import BioComponent from './components/user/BioComponent';
@@ -53,7 +54,8 @@ const app = createApp({
     components: {
         Register,
         Login,
-        HomeProperties,
+        HomeSampleProperties,
+        HomePropertyDetail,
 
         DashboardComponent,
         BioComponent,

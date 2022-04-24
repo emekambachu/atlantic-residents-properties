@@ -140,8 +140,9 @@
                                     <h4 class="widget_title">Contacts</h4>
                                     <ul class="footer-menu">
                                         <li><strong>Email: </strong> info@atlanticresidentsproperties.com</li>
-                                        <li><strong>Mobile: </strong> 000</li>
+                                        <li><strong>Mobile: </strong> +1 318-309-7154</li>
                                         <li><strong>Address: </strong> 345 E. Esplanade Ave 0491 San Jacinto, CA, 96589</li>
+                                        <li><strong>Address: </strong> 3300 S I 10 SERVICE METAIRIE LA 70001-1973 US</li>
                                     </ul>
                                 </div>
                             </div>
