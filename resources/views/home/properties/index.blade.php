@@ -18,7 +18,7 @@
 
             <div class="row">
                 <div class="col-xl-7 col-lg-8 col-md-10">
-                    <h2 class="big-header-capt mb-4 text-white">Find Your Next<br>Perfect <span class="theme-cl">Place</span> To<br> Live.</h2>
+                    <h2 class="big-header-capt mb-4 text-white">Search Your Next<br>Property</h2>
                 </div>
             </div>
 
@@ -212,7 +212,9 @@
             <!-- Pagination -->
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                    <a href="" class="btn btn-theme-light-2 rounded">Explore More Properties</a>
+                    @if ($properties->lastPage() > 1)
+                        {{ $properties->onEachSide(0)->appends(request()->except('page'))->links() }}
+                    @endif
                 </div>
             </div>
 
