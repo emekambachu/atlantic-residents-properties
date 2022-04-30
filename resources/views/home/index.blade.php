@@ -161,12 +161,11 @@
                 <div class="col-lg col-md-4">
                     <!-- Single Category -->
                     <div class="property_cats_boxs">
-                        <a href="" class="category-box">
+                        <a href="javascript:void(0);" class="category-box">
                             <div class="property_category_short">
                                 <div class="category-icon clip-1">
                                     <i class="flaticon-beach-house-2"></i>
                                 </div>
-
                                 <div class="property_category_expand property_category_short-text">
                                     <h4>Family House</h4>
                                     <p>122 Property</p>
@@ -179,12 +178,11 @@
                 <div class="col-lg col-md-4">
                     <!-- Single Category -->
                     <div class="property_cats_boxs">
-                        <a href="" class="category-box">
+                        <a href="javascript:void(0);" class="category-box">
                             <div class="property_category_short">
                                 <div class="category-icon clip-2">
                                     <i class="flaticon-cabin"></i>
                                 </div>
-
                                 <div class="property_category_expand property_category_short-text">
                                     <h4>House & Villa</h4>
                                     <p>155 Property</p>
@@ -197,12 +195,11 @@
                 <div class="col-lg col-md-4">
                     <!-- Single Category -->
                     <div class="property_cats_boxs">
-                        <a href="" class="category-box">
+                        <a href="javascript:void(0);" class="category-box">
                             <div class="property_category_short">
                                 <div class="category-icon clip-3">
                                     <i class="flaticon-apartments"></i>
                                 </div>
-
                                 <div class="property_category_expand property_category_short-text">
                                     <h4>Apartment</h4>
                                     <p>300 Property</p>
@@ -215,12 +212,11 @@
                 <div class="col-lg col-md-4">
                     <!-- Single Category -->
                     <div class="property_cats_boxs">
-                        <a href="" class="category-box">
+                        <a href="javascript:void(0);" class="category-box">
                             <div class="property_category_short">
                                 <div class="category-icon clip-4">
                                     <i class="flaticon-student-housing"></i>
                                 </div>
-
                                 <div class="property_category_expand property_category_short-text">
                                     <h4>Office & Studio</h4>
                                     <p>80 Property</p>
@@ -233,12 +229,11 @@
                 <div class="col-lg col-md-4">
                     <!-- Single Category -->
                     <div class="property_cats_boxs">
-                        <a href="" class="category-box">
+                        <a href="javascript:void(0);" class="category-box">
                             <div class="property_category_short">
                                 <div class="category-icon clip-5">
                                     <i class="flaticon-modern-house-4"></i>
                                 </div>
-
                                 <div class="property_category_expand property_category_short-text">
                                     <h4>Villa & Condo</h4>
                                     <p>80 Property</p>
@@ -303,7 +298,8 @@
 
                                     <div class="fr-grid-thumb">
                                         <a href="">
-                                            <img src="assets/img/team-1.jpg" class="img-fluid mx-auto" alt="">
+                                            <img src="{{ asset('/assets/img/team-1.jpg') }}"
+                                                 class="img-fluid mx-auto" alt="">
                                         </a>
                                         <ul class="inline_social">
                                             <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -319,8 +315,12 @@
                                     </div>
 
                                     <div class="fr-infos-deatil">
-                                        <a href="#"  data-toggle="modal" data-target="#autho-message" class="btn agent-btn theme-bg"><i class="fa fa-envelope mr-2"></i>Message</a>
-                                        <a href="#" class="btn agent-btn theme-black"><i class="fa fa-phone"></i></a>
+                                        <a href="#"  data-toggle="modal" data-target="#autho-message"
+                                           class="btn agent-btn theme-bg">
+                                            <i class="fa fa-envelope mr-2"></i>Message</a>
+                                        <a href="#" class="btn agent-btn theme-black">
+                                            <i class="fa fa-phone"></i>
+                                        </a>
                                     </div>
 
                                 </div>

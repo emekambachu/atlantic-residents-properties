@@ -64,7 +64,7 @@
 
             <div class="listing-detail-footer">
                 <div class="footer-first">
-                    <h6 class="listing-card-info-price mb-0 p-0">${{ property.cost }}</h6>
+                    <h6 class="listing-card-info-price mb-0 p-0">${{ addCommaDec(property.cost) }}</h6>
                 </div>
                 <div class="footer-flex">
                     <a :href="'/property/' + property.id + '/detail'" class="prt-view">View Detail</a>
@@ -86,6 +86,22 @@
 
             }
         },
+        methods: {
+            addComma(number){
+                return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            },
+
+            addCommaDec(number){
+                // convert the number to string and split it before the full-stop
+                // convert the splitted numbers to array
+                // the first set of numbers before the fullstop is the first array,
+                // convert it to comma seperated after 3 numbers
+                // Then join it back
+                let parts = number.toString().split(".");
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return parts.join(".");
+            }
+        }
     }
 </script>
 

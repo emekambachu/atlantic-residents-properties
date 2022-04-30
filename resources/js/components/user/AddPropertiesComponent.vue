@@ -154,13 +154,33 @@
                                                        v-model="form.features">
                                                 <label for="check-ac">Air condition</label>
 
-                                                <input id="check-wf" type="checkbox" value="wifi"
+                                                <input id="check-wf" type="checkbox" value="Wifi"
                                                        v-model="form.features">
                                                 <label for="check-wf">Wi Fi</label>
 
-                                                <input id="check-g" type="checkbox" value="gym"
+                                                <input id="check-g" type="checkbox" value="Gym"
                                                        v-model="form.features">
                                                 <label for="check-g">Gym</label>
+
+                                                <input id="check-lr" type="checkbox" value="Laundry room"
+                                                       v-model="form.features">
+                                                <label for="check-g">Laundry Room</label>
+
+                                                <input id="check-i" type="checkbox" value="Internet"
+                                                       v-model="form.features">
+                                                <label for="check-g">Internet</label>
+
+                                                <input id="check-pa" type="checkbox" value="Pets allowed"
+                                                       v-model="form.features">
+                                                <label for="check-g">Pets Allowed</label>
+
+                                                <input id="check-ch" type="checkbox" value="Central heating"
+                                                       v-model="form.features">
+                                                <label for="check-g">Central heating</label>
+
+                                                <input id="check-sp" type="checkbox" value="Swimming pool"
+                                                       v-model="form.features">
+                                                <label for="check-g">Swimming pool</label>
                                             </div>
                                         </div>
                                     </div>

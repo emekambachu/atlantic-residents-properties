@@ -63,13 +63,13 @@
                         <div class="property_info_detail_wrap_first">
                             <div class="pr-price-into">
                                 <ul class="prs_lists">
-                                    <li><span class="bed">3 Beds</span></li>
-                                    <li><span class="bath">2 Bath</span></li>
-                                    <li><span class="gar">1 Garage</span></li>
+                                    <li><span class="bed">{{ property.bedrooms }} Beds</span></li>
+                                    <li><span class="bath">{{ property.bathrooms }} Bath</span></li>
+                                    <li><span class="gar">{{ property.living_rooms }} Living room</span></li>
                                     <li><span class="sqft">800 sqft</span></li>
                                 </ul>
-                                <h2>5689 Resot Relly Market, Montreal Canada, HAQC445</h2>
-                                <span><i class="lni-map-marker"></i> 778 Country St. Panama City, FL</span>
+                                <h2>{{ property.address }}</h2>
+                                <span><i class="lni-map-marker"></i> {{ property.country.name }}</span>
                             </div>
                         </div>
 
@@ -98,52 +98,42 @@
                     </div>
 
                     <!-- Single Block Wrap -->
-                    <div class="property_block_wrap">
+<!--                    <div class="property_block_wrap">-->
 
-                        <div class="property_block_wrap_header">
-                            <h4 class="property_block_title">Advance Features</h4>
-                        </div>
+<!--                        <div class="property_block_wrap_header">-->
+<!--                            <h4 class="property_block_title">Advance Features</h4>-->
+<!--                        </div>-->
 
-                        <div class="block-body">
-                            <ul class="row p-0 m-0">
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bed mr-1"></i>4 Bedrooms</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bath mr-1"></i>2 Bathrooms</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-expand-arrows-alt mr-1"></i>12400 sqft</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-house-damage mr-1"></i>1 Living Rooms</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-building mr-1"></i>Build 2007</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-utensils mr-1"></i>2 Kitchens </li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-car mr-1"></i>Car Parking</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-briefcase-medical mr-1"></i>Free Medical</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-fire mr-1"></i>Fireplace</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-layer-group mr-1"></i>Residential</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-tv mr-1"></i>TV Cable</li>
-                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-spa mr-1"></i>Free Spa</li>
-                            </ul>
-                        </div>
+<!--                        <div class="block-body">-->
+<!--                            <ul class="row p-0 m-0">-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bed mr-1"></i>4 Bedrooms</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bath mr-1"></i>2 Bathrooms</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-expand-arrows-alt mr-1"></i>12400 sqft</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-house-damage mr-1"></i>1 Living Rooms</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-building mr-1"></i>Build 2007</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-utensils mr-1"></i>2 Kitchens </li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-car mr-1"></i>Car Parking</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-briefcase-medical mr-1"></i>Free Medical</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-fire mr-1"></i>Fireplace</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-layer-group mr-1"></i>Residential</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-tv mr-1"></i>TV Cable</li>-->
+<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-spa mr-1"></i>Free Spa</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
 
-                    </div>
+<!--                    </div>-->
 
                     <!-- Single Block Wrap -->
                     <div class="property_block_wrap">
 
                         <div class="property_block_wrap_header">
-                            <h4 class="property_block_title">Ameneties</h4>
+                            <h4 class="property_block_title">Amenities</h4>
                         </div>
 
                         <div class="block-body">
-                            <ul class="avl-features third">
-                                <li class="active">Air Conditioning</li>
-                                <li class="active">Swimming Pool</li>
-                                <li class="active">Central Heating</li>
-                                <li class="active">Laundry Room</li>
-                                <li class="active">Gym</li>
-                                <li class="active">Alarm</li>
-                                <li class="active">Window Covering</li>
-                                <li class="active">Internet</li>
-                                <li class="active">Pets Allow</li>
-                                <li class="active">Free WiFi</li>
-                                <li>Car Parking</li>
-                                <li>Spa & Massage</li>
+                            <ul v-if="property.features.length" class="avl-features third">
+                                <li v-for="(feature, index) in property.features.split(',')" :key="index"
+                                    class="active">{{ feature }}</li>
                             </ul>
                         </div>
                     </div>
@@ -208,7 +198,8 @@
                                             <label>Check In</label>
                                             <div class="cld-box">
                                                 <i class="ti-calendar"></i>
-                                                <input type="text" name="checkin" class="form-control" value="10/24/2020" />
+                                                <input type="text" name="checkin" class="form-control"
+                                                       value="10/24/2020" />
                                             </div>
                                         </div>
                                     </div>
@@ -217,7 +208,8 @@
                                             <label>Check Out</label>
                                             <div class="cld-box">
                                                 <i class="ti-calendar"></i>
-                                                <input type="text" name="checkout" class="form-control" value="10/24/2020" />
+                                                <input type="text" name="checkout" class="form-control"
+                                                       value="10/24/2020" />
                                             </div>
                                         </div>
                                     </div>
@@ -226,9 +218,11 @@
                                             <div>
                                                 <label for="guests">Adults</label>
                                                 <div class="guests-box">
-                                                    <button class="counter-btn" type="button" id="cnt-down"><i class="ti-minus"></i></button>
+                                                    <button class="counter-btn" type="button" id="cnt-down">
+                                                        <i class="ti-minus"></i></button>
                                                     <input type="text" id="guestNo" name="guests" value="2"/>
-                                                    <button class="counter-btn" type="button" id="cnt-up"><i class="ti-plus"></i></button>
+                                                    <button class="counter-btn" type="button" id="cnt-up">
+                                                        <i class="ti-plus"></i></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -238,66 +232,24 @@
                                             <div class="guests">
                                                 <label>Kids</label>
                                                 <div class="guests-box">
-                                                    <button class="counter-btn" type="button" id="kcnt-down"><i class="ti-minus"></i></button>
+                                                    <button class="counter-btn" type="button" id="kcnt-down">
+                                                        <i class="ti-minus"></i></button>
                                                     <input type="text" id="kidsNo" name="kids" value="0"/>
-                                                    <button class="counter-btn" type="button" id="kcnt-up"><i class="ti-plus"></i></button>
+                                                    <button class="counter-btn" type="button" id="kcnt-up">
+                                                        <i class="ti-plus"></i></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg12 col-md-12 col-sm-12 mt-3">
-                                        <label for="guests">Advance features</label>
-                                        <div class="_adv_features_list">
-                                            <ul class="no-ul-list">
-                                                <li>
-                                                    <input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
-                                                    <label for="a-1" class="checkbox-custom-label">Air Condition<i>$10</i></label>
-                                                </li>
-                                                <li>
-                                                    <input id="a-2" class="checkbox-custom" name="a-2" type="checkbox" checked>
-                                                    <label for="a-2" class="checkbox-custom-label">Bedding<i>$07</i></label>
-                                                </li>
-                                                <li>
-                                                    <input id="a-3" class="checkbox-custom" name="a-3" type="checkbox" checked>
-                                                    <label for="a-3" class="checkbox-custom-label">Heating<i>$20</i></label>
-                                                </li>
-                                                <li>
-                                                    <input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
-                                                    <label for="a-4" class="checkbox-custom-label">Internet<i>$10</i></label>
-                                                </li>
-                                                <li>
-                                                    <input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
-                                                    <label for="a-5" class="checkbox-custom-label">Microwave<i>$05</i></label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg12 col-md-12 col-sm-12 mt-3">
-                                        <label for="guests">Price & Tax</label>
-                                        <div class="_adv_features">
-                                            <ul>
-                                                <li>I Night<span>$310</span></li>
-                                                <li>Discount 25$<span>-$250</span></li>
-                                                <li>Service Fee<span>$17</span></li>
-                                                <li>Breakfast Per Adult<span>$35</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="side-booking-foot">
-                                        <span class="sb-header-left">Total Payment</span>
-                                        <h3 class="price theme-cl">$170</h3>
-                                    </div>
-
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="stbooking-footer mt-1">
                                             <div class="form-group mb-0 pb-0">
-                                                <a href="#" class="btn book_btn theme-bg">Book It Now</a>
+                                                <a href="#" class="btn book_btn theme-bg">Book an inspection</a>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -315,7 +267,8 @@
                                     <div class="clearfix"></div>
                                 </div>
 
-                                <a href="#" class="agent-btn-contact" data-toggle="modal" data-target="#autho-message"><i class="ti-comment-alt"></i>Message</a>
+                                <a href="#" class="agent-btn-contact" data-toggle="modal"
+                                   data-target="#autho-message"><i class="ti-comment-alt"></i>Message</a>
 
                                 <span id="number" data-last="+1234567896">
 											<span><i class="ti-headphone-alt"></i><a class="see">

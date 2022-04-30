@@ -22862,6 +22862,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {};
+  },
+  methods: {
+    addComma: function addComma(number) {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    addCommaDec: function addCommaDec(number) {
+      // convert the number to string and split it before the full-stop
+      // convert the splitted numbers to array
+      // the first set of numbers before the fullstop is the first array,
+      // convert it to comma seperated after 3 numbers
+      // Then join it back
+      var parts = number.toString().split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join(".");
+    }
   }
 });
 
@@ -23714,14 +23729,47 @@ var _hoisted_37 = {
 var _hoisted_38 = {
   "class": "col-lg-8 col-md-12 col-sm-12"
 };
-
-var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_info_detail_wrap mb-4\"><div class=\"property_info_detail_wrap_first\"><div class=\"pr-price-into\"><ul class=\"prs_lists\"><li><span class=\"bed\">3 Beds</span></li><li><span class=\"bath\">2 Bath</span></li><li><span class=\"gar\">1 Garage</span></li><li><span class=\"sqft\">800 sqft</span></li></ul><h2>5689 Resot Relly Market, Montreal Canada, HAQC445</h2><span><i class=\"lni-map-marker\"></i> 778 Country St. Panama City, FL</span></div></div><div class=\"property_detail_section\"><div class=\"prt-sect-pric\"><ul class=\"_share_lists\"><li><a href=\"#\"><i class=\"fa fa-bookmark\"></i></a></li><li><a href=\"#\"><i class=\"fa fa-share\"></i></a></li></ul></div></div></div>", 1);
-
+var _hoisted_39 = {
+  "class": "property_info_detail_wrap mb-4"
+};
 var _hoisted_40 = {
+  "class": "property_info_detail_wrap_first"
+};
+var _hoisted_41 = {
+  "class": "pr-price-into"
+};
+var _hoisted_42 = {
+  "class": "prs_lists"
+};
+var _hoisted_43 = {
+  "class": "bed"
+};
+var _hoisted_44 = {
+  "class": "bath"
+};
+var _hoisted_45 = {
+  "class": "gar"
+};
+
+var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "sqft"
+}, "800 sqft")], -1
+/* HOISTED */
+);
+
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "lni-map-marker"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_detail_section\"><div class=\"prt-sect-pric\"><ul class=\"_share_lists\"><li><a href=\"#\"><i class=\"fa fa-bookmark\"></i></a></li><li><a href=\"#\"><i class=\"fa fa-share\"></i></a></li></ul></div></div>", 1);
+
+var _hoisted_49 = {
   "class": "property_block_wrap"
 };
 
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "property_block_wrap_header"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
   "class": "property_block_title"
@@ -23729,40 +23777,55 @@ var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_42 = {
+var _hoisted_51 = {
   "class": "block-body"
 };
+var _hoisted_52 = {
+  "class": "property_block_wrap"
+};
 
-var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Advance Features</h4></div><div class=\"block-body\"><ul class=\"row p-0 m-0\"><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-bed mr-1\"></i>4 Bedrooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-bath mr-1\"></i>2 Bathrooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-expand-arrows-alt mr-1\"></i>12400 sqft</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-house-damage mr-1\"></i>1 Living Rooms</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-building mr-1\"></i>Build 2007</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-utensils mr-1\"></i>2 Kitchens </li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-car mr-1\"></i>Car Parking</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-briefcase-medical mr-1\"></i>Free Medical</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-fire mr-1\"></i>Fireplace</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-layer-group mr-1\"></i>Residential</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-tv mr-1\"></i>TV Cable</li><li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-spa mr-1\"></i>Free Spa</li></ul></div></div>", 1);
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "property_block_wrap_header"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  "class": "property_block_title"
+}, "Amenities")], -1
+/* HOISTED */
+);
 
-var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Ameneties</h4></div><div class=\"block-body\"><ul class=\"avl-features third\"><li class=\"active\">Air Conditioning</li><li class=\"active\">Swimming Pool</li><li class=\"active\">Central Heating</li><li class=\"active\">Laundry Room</li><li class=\"active\">Gym</li><li class=\"active\">Alarm</li><li class=\"active\">Window Covering</li><li class=\"active\">Internet</li><li class=\"active\">Pets Allow</li><li class=\"active\">Free WiFi</li><li>Car Parking</li><li>Spa &amp; Massage</li></ul></div></div>", 1);
+var _hoisted_54 = {
+  "class": "block-body"
+};
+var _hoisted_55 = {
+  key: 0,
+  "class": "avl-features third"
+};
 
-var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Write a Review</h4></div><div class=\"block-body\"><div class=\"row\"><div class=\"col-lg-6 col-md-6 col-sm-12\"><div class=\"form-group\"><label>Name</label><input type=\"text\" class=\"form-control\"></div></div><div class=\"col-lg-6 col-md-6 col-sm-12\"><div class=\"form-group\"><label>eMmail ID</label><input type=\"email\" class=\"form-control\"></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"form-group\"><label>Messages</label><textarea class=\"form-control ht-80\"></textarea></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"form-group\"><button class=\"btn theme-bg rounded\" type=\"submit\">Submit Review</button></div></div></div></div></div>", 1);
+var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"property_block_wrap\"><div class=\"property_block_wrap_header\"><h4 class=\"property_block_title\">Write a Review</h4></div><div class=\"block-body\"><div class=\"row\"><div class=\"col-lg-6 col-md-6 col-sm-12\"><div class=\"form-group\"><label>Name</label><input type=\"text\" class=\"form-control\"></div></div><div class=\"col-lg-6 col-md-6 col-sm-12\"><div class=\"form-group\"><label>eMmail ID</label><input type=\"email\" class=\"form-control\"></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"form-group\"><label>Messages</label><textarea class=\"form-control ht-80\"></textarea></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"form-group\"><button class=\"btn theme-bg rounded\" type=\"submit\">Submit Review</button></div></div></div></div></div>", 1);
 
-var _hoisted_46 = {
+var _hoisted_57 = {
   "class": "col-lg-4 col-md-12 col-sm-12"
 };
-var _hoisted_47 = {
+var _hoisted_58 = {
   "class": "property-sidebar"
 };
-var _hoisted_48 = {
+var _hoisted_59 = {
   "class": "sider_blocks_wrap"
 };
-var _hoisted_49 = {
+var _hoisted_60 = {
   "class": "side-booking-header"
 };
-var _hoisted_50 = {
+var _hoisted_61 = {
   "class": "sb-header-left"
 };
-var _hoisted_51 = {
+var _hoisted_62 = {
   "class": "price"
 };
 
-var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"side-booking-body\"><div class=\"row\"><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><label>Check In</label><div class=\"cld-box\"><i class=\"ti-calendar\"></i><input type=\"text\" name=\"checkin\" class=\"form-control\" value=\"10/24/2020\"></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><label>Check Out</label><div class=\"cld-box\"><i class=\"ti-calendar\"></i><input type=\"text\" name=\"checkout\" class=\"form-control\" value=\"10/24/2020\"></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><div><label for=\"guests\">Adults</label><div class=\"guests-box\"><button class=\"counter-btn\" type=\"button\" id=\"cnt-down\"><i class=\"ti-minus\"></i></button><input type=\"text\" id=\"guestNo\" name=\"guests\" value=\"2\"><button class=\"counter-btn\" type=\"button\" id=\"cnt-up\"><i class=\"ti-plus\"></i></button></div></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><div class=\"guests\"><label>Kids</label><div class=\"guests-box\"><button class=\"counter-btn\" type=\"button\" id=\"kcnt-down\"><i class=\"ti-minus\"></i></button><input type=\"text\" id=\"kidsNo\" name=\"kids\" value=\"0\"><button class=\"counter-btn\" type=\"button\" id=\"kcnt-up\"><i class=\"ti-plus\"></i></button></div></div></div></div><div class=\"col-lg12 col-md-12 col-sm-12 mt-3\"><label for=\"guests\">Advance features</label><div class=\"_adv_features_list\"><ul class=\"no-ul-list\"><li><input id=\"a-1\" class=\"checkbox-custom\" name=\"a-1\" type=\"checkbox\"><label for=\"a-1\" class=\"checkbox-custom-label\">Air Condition<i>$10</i></label></li><li><input id=\"a-2\" class=\"checkbox-custom\" name=\"a-2\" type=\"checkbox\" checked><label for=\"a-2\" class=\"checkbox-custom-label\">Bedding<i>$07</i></label></li><li><input id=\"a-3\" class=\"checkbox-custom\" name=\"a-3\" type=\"checkbox\" checked><label for=\"a-3\" class=\"checkbox-custom-label\">Heating<i>$20</i></label></li><li><input id=\"a-4\" class=\"checkbox-custom\" name=\"a-4\" type=\"checkbox\"><label for=\"a-4\" class=\"checkbox-custom-label\">Internet<i>$10</i></label></li><li><input id=\"a-5\" class=\"checkbox-custom\" name=\"a-5\" type=\"checkbox\"><label for=\"a-5\" class=\"checkbox-custom-label\">Microwave<i>$05</i></label></li></ul></div></div><div class=\"col-lg12 col-md-12 col-sm-12 mt-3\"><label for=\"guests\">Price &amp; Tax</label><div class=\"_adv_features\"><ul><li>I Night<span>$310</span></li><li>Discount 25$<span>-$250</span></li><li>Service Fee<span>$17</span></li><li>Breakfast Per Adult<span>$35</span></li></ul></div></div><div class=\"side-booking-foot\"><span class=\"sb-header-left\">Total Payment</span><h3 class=\"price theme-cl\">$170</h3></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"stbooking-footer mt-1\"><div class=\"form-group mb-0 pb-0\"><a href=\"#\" class=\"btn book_btn theme-bg\">Book It Now</a></div></div></div></div></div>", 1);
+var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"side-booking-body\"><div class=\"row\"><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><label>Check In</label><div class=\"cld-box\"><i class=\"ti-calendar\"></i><input type=\"text\" name=\"checkin\" class=\"form-control\" value=\"10/24/2020\"></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><label>Check Out</label><div class=\"cld-box\"><i class=\"ti-calendar\"></i><input type=\"text\" name=\"checkout\" class=\"form-control\" value=\"10/24/2020\"></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><div><label for=\"guests\">Adults</label><div class=\"guests-box\"><button class=\"counter-btn\" type=\"button\" id=\"cnt-down\"><i class=\"ti-minus\"></i></button><input type=\"text\" id=\"guestNo\" name=\"guests\" value=\"2\"><button class=\"counter-btn\" type=\"button\" id=\"cnt-up\"><i class=\"ti-plus\"></i></button></div></div></div></div><div class=\"col-lg-6 col-md-6 col-sm-6 col-6\"><div class=\"form-group\"><div class=\"guests\"><label>Kids</label><div class=\"guests-box\"><button class=\"counter-btn\" type=\"button\" id=\"kcnt-down\"><i class=\"ti-minus\"></i></button><input type=\"text\" id=\"kidsNo\" name=\"kids\" value=\"0\"><button class=\"counter-btn\" type=\"button\" id=\"kcnt-up\"><i class=\"ti-plus\"></i></button></div></div></div></div><div class=\"col-lg-12 col-md-12 col-sm-12\"><div class=\"stbooking-footer mt-1\"><div class=\"form-group mb-0 pb-0\"><a href=\"#\" class=\"btn book_btn theme-bg\">Book an inspection</a></div></div></div></div></div>", 1);
 
-var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"sider_blocks_wrap\"><div class=\"side-booking-body\"><div class=\"agent-_blocks_title\"><div class=\"agent-_blocks_thumb\"><img src=\"/assets/img/user-6.jpg\" alt=\"\"></div><div class=\"agent-_blocks_caption\"><h4><a href=\"#\">Shivangi Preet</a></h4><span class=\"approved-agent\"><i class=\"ti-check\"></i>approved</span></div><div class=\"clearfix\"></div></div><a href=\"#\" class=\"agent-btn-contact\" data-toggle=\"modal\" data-target=\"#autho-message\"><i class=\"ti-comment-alt\"></i>Message</a><span id=\"number\" data-last=\"+1234567896\"><span><i class=\"ti-headphone-alt\"></i><a class=\"see\"> +355(44)35...Show</a></span></span></div></div>", 1);
+var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"sider_blocks_wrap\"><div class=\"side-booking-body\"><div class=\"agent-_blocks_title\"><div class=\"agent-_blocks_thumb\"><img src=\"/assets/img/user-6.jpg\" alt=\"\"></div><div class=\"agent-_blocks_caption\"><h4><a href=\"#\">Shivangi Preet</a></h4><span class=\"approved-agent\"><i class=\"ti-check\"></i>approved</span></div><div class=\"clearfix\"></div></div><a href=\"#\" class=\"agent-btn-contact\" data-toggle=\"modal\" data-target=\"#autho-message\"><i class=\"ti-comment-alt\"></i>Message</a><span id=\"number\" data-last=\"+1234567896\"><span><i class=\"ti-headphone-alt\"></i><a class=\"see\"> +355(44)35...Show</a></span></span></div></div>", 1);
 
-var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"theme-bg call_action_wrap-wrap\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-12\"><div class=\"call_action_wrap\"><div class=\"call_action_wrap-head\"><h3>Do You Have Questions ?</h3><span>We&#39;ll help you to grow your career and growth.</span></div><a href=\"#\" class=\"btn btn-call_action_wrap\">Contact Us Today</a></div></div></div></div></section>", 1);
+var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"theme-bg call_action_wrap-wrap\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-12\"><div class=\"call_action_wrap\"><div class=\"call_action_wrap-head\"><h3>Do You Have Questions ?</h3><span>We&#39;ll help you to grow your career and growth.</span></div><a href=\"#\" class=\"btn btn-call_action_wrap\">Contact Us Today</a></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Hero Banner  Start================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Gallery Part Start "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
@@ -23864,11 +23927,30 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_34)], 8
   /* PROPS */
-  , _hoisted_33)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Hero Banner End ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Property Detail Start ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" property main detail "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.description), 1
+  , _hoisted_33)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Hero Banner End ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Property Detail Start ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" property main detail "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.bedrooms) + " Beds", 1
   /* TEXT */
-  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), _hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Write a Review "), _hoisted_45]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" property Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_51, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.cost), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.bathrooms) + " Bath", 1
   /* TEXT */
-  )])]), _hoisted_52]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Agent Detail "), _hoisted_53])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Property Detail End ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Call To Action ================================== "), _hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Call To Action End ================================== ")], 64
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.living_rooms) + " Living room", 1
+  /* TEXT */
+  )]), _hoisted_46]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.address), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [_hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.country.name), 1
+  /* TEXT */
+  )])])]), _hoisted_48]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [_hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_51, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.description), 1
+  /* TEXT */
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"property_block_wrap\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <div class=\"property_block_wrap_header\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <h4 class=\"property_block_title\">Advance Features</h4>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <div class=\"block-body\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <ul class=\"row p-0 m-0\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-bed mr-1\"></i>4 Bedrooms</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-bath mr-1\"></i>2 Bathrooms</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-expand-arrows-alt mr-1\"></i>12400 sqft</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-house-damage mr-1\"></i>1 Living Rooms</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-building mr-1\"></i>Build 2007</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-utensils mr-1\"></i>2 Kitchens </li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-car mr-1\"></i>Car Parking</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-briefcase-medical mr-1\"></i>Free Medical</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-fire mr-1\"></i>Fireplace</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-layer-group mr-1\"></i>Residential</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-tv mr-1\"></i>TV Cable</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <li class=\"col-lg-4 col-md-6 mb-2 p-0\"><i class=\"fa fa-spa mr-1\"></i>Free Spa</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            </ul>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Block Wrap "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_52, [_hoisted_53, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_54, [$props.property.features.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_55, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.property.features.split(','), function (feature, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+      key: index,
+      "class": "active"
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(feature), 1
+    /* TEXT */
+    );
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single Write a Review "), _hoisted_56]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" property Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_57, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_58, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_59, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_62, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.cost), 1
+  /* TEXT */
+  )])]), _hoisted_63]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Agent Detail "), _hoisted_64])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Property Detail End ================================== "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Call To Action ================================== "), _hoisted_65, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ============================ Call To Action End ================================== ")], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -24047,7 +24129,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.living_rooms) + " Living rooms ", 1
   /* TEXT */
-  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_35, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.property.cost), 1
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_35, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.addCommaDec($props.property.cost)), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: '/property/' + $props.property.id + '/detail',
@@ -24632,25 +24714,36 @@ var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_60 = {
-  "class": "col-md-2"
-};
-var _hoisted_61 = {
-  "class": "form-group"
-};
-var _hoisted_62 = {
-  "class": "add-listing__input-file-box"
-};
-
-var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "add-listing__input-file-wrap"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ion-ios-cloud-upload"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Click to upload your images")], -1
+var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "check-g"
+}, "Laundry Room", -1
 /* HOISTED */
 );
 
-var _hoisted_64 = ["src"];
+var _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "check-g"
+}, "Internet", -1
+/* HOISTED */
+);
+
+var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "check-g"
+}, "Pets Allowed", -1
+/* HOISTED */
+);
+
+var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "check-g"
+}, "Central heating", -1
+/* HOISTED */
+);
+
+var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "check-g"
+}, "Swimming pool", -1
+/* HOISTED */
+);
+
 var _hoisted_65 = {
   "class": "col-md-2"
 };
@@ -24665,7 +24758,7 @@ var _hoisted_68 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "add-listing__input-file-wrap"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "ion-ios-cloud-upload"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Click to upload image")], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Click to upload your images")], -1
 /* HOISTED */
 );
 
@@ -24684,7 +24777,7 @@ var _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "add-listing__input-file-wrap"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "ion-ios-cloud-upload"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Click to upload your images")], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Click to upload image")], -1
 /* HOISTED */
 );
 
@@ -24722,13 +24815,32 @@ var _hoisted_83 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "add-listing__input-file-wrap"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "ion-ios-cloud-upload"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Click here to upload your images")], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Click to upload your images")], -1
 /* HOISTED */
 );
 
 var _hoisted_84 = ["src"];
+var _hoisted_85 = {
+  "class": "col-md-2"
+};
+var _hoisted_86 = {
+  "class": "form-group"
+};
+var _hoisted_87 = {
+  "class": "add-listing__input-file-box"
+};
 
-var _hoisted_85 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_88 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "add-listing__input-file-wrap"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "ion-ios-cloud-upload"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Click here to upload your images")], -1
+/* HOISTED */
+);
+
+var _hoisted_89 = ["src"];
+
+var _hoisted_90 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-12"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
@@ -24768,7 +24880,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.formLoading]]), !$data.formLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
     key: 2,
     enctype: "multipart/form-data",
-    onSubmit: _cache[17] || (_cache[17] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[22] || (_cache[22] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submitProperty && $options.submitProperty.apply($options, arguments);
     }, ["prevent"]))
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -24885,7 +24997,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "check-wf",
     type: "checkbox",
-    value: "wifi",
+    value: "Wifi",
     "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
       return $data.form.features = $event;
     })
@@ -24894,39 +25006,70 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_58, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "check-g",
     type: "checkbox",
-    value: "gym",
+    value: "Gym",
     "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
       return $data.form.features = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_59])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_59, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "check-lr",
+    type: "checkbox",
+    value: "Laundry room",
+    "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
+      return $data.form.features = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "check-i",
+    type: "checkbox",
+    value: "Internet",
+    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
+      return $data.form.features = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_61, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "check-pa",
+    type: "checkbox",
+    value: "Pets allowed",
+    "onUpdate:modelValue": _cache[14] || (_cache[14] = function ($event) {
+      return $data.form.features = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_62, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "check-ch",
+    type: "checkbox",
+    value: "Central heating",
+    "onUpdate:modelValue": _cache[15] || (_cache[15] = function ($event) {
+      return $data.form.features = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_63, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "check-sp",
+    type: "checkbox",
+    value: "Swimming pool",
+    "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
+      return $data.form.features = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.form.features]]), _hoisted_64])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_65, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_67, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "class": "add-listing__input-file",
     type: "file",
     name: "file",
     id: "file",
-    onChange: _cache[12] || (_cache[12] = function () {
+    onChange: _cache[17] || (_cache[17] = function () {
       return $options.uploadImage1 && $options.uploadImage1.apply($options, arguments);
     })
   }, null, 32
   /* HYDRATE_EVENTS */
-  ), _hoisted_63]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  ), _hoisted_68]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: $data.form.image1preview,
     width: "100"
-  }, null, 8
-  /* PROPS */
-  , _hoisted_64)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_65, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_67, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    "class": "add-listing__input-file",
-    type: "file",
-    name: "file",
-    id: "file",
-    onChange: _cache[13] || (_cache[13] = function () {
-      return $options.uploadImage2 && $options.uploadImage2.apply($options, arguments);
-    })
-  }, null, 32
-  /* HYDRATE_EVENTS */
-  ), _hoisted_68]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.form.image2preview
   }, null, 8
   /* PROPS */
   , _hoisted_69)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_70, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -24934,13 +25077,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "file",
     name: "file",
     id: "file",
-    onChange: _cache[14] || (_cache[14] = function () {
-      return $options.uploadImage3 && $options.uploadImage3.apply($options, arguments);
+    onChange: _cache[18] || (_cache[18] = function () {
+      return $options.uploadImage2 && $options.uploadImage2.apply($options, arguments);
     })
   }, null, 32
   /* HYDRATE_EVENTS */
   ), _hoisted_73]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.form.image3preview
+    src: $data.form.image2preview
   }, null, 8
   /* PROPS */
   , _hoisted_74)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_76, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_77, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -24948,13 +25091,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "file",
     name: "file",
     id: "file",
-    onChange: _cache[15] || (_cache[15] = function () {
-      return $options.uploadImage4 && $options.uploadImage4.apply($options, arguments);
+    onChange: _cache[19] || (_cache[19] = function () {
+      return $options.uploadImage3 && $options.uploadImage3.apply($options, arguments);
     })
   }, null, 32
   /* HYDRATE_EVENTS */
   ), _hoisted_78]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.form.image4preview
+    src: $data.form.image3preview
   }, null, 8
   /* PROPS */
   , _hoisted_79)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_80, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_81, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_82, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -24962,16 +25105,30 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "file",
     name: "file",
     id: "file",
-    onChange: _cache[16] || (_cache[16] = function () {
-      return $options.uploadImage5 && $options.uploadImage5.apply($options, arguments);
+    onChange: _cache[20] || (_cache[20] = function () {
+      return $options.uploadImage4 && $options.uploadImage4.apply($options, arguments);
     })
   }, null, 32
   /* HYDRATE_EVENTS */
   ), _hoisted_83]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: $data.form.image4preview
+  }, null, 8
+  /* PROPS */
+  , _hoisted_84)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_85, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_86, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_87, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "add-listing__input-file",
+    type: "file",
+    name: "file",
+    id: "file",
+    onChange: _cache[21] || (_cache[21] = function () {
+      return $options.uploadImage5 && $options.uploadImage5.apply($options, arguments);
+    })
+  }, null, 32
+  /* HYDRATE_EVENTS */
+  ), _hoisted_88]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: $data.form.image5preview
   }, null, 8
   /* PROPS */
-  , _hoisted_84)])]), _hoisted_85])], 32
+  , _hoisted_89)])]), _hoisted_90])], 32
   /* HYDRATE_EVENTS */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])])], 64
   /* STABLE_FRAGMENT */

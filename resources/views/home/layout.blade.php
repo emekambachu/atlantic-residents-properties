@@ -68,7 +68,7 @@
                             <ul class="nav-dropdown nav-submenu">
                                 <li><a href="{{ url('/about') }}">Company</a></li>
                                 <li><a href="{{ url('/terms') }}">Terms of use</a></li>
-                                <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ url('/privacy') }}">Privacy Policy</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ url('/contact') }}">Contact<span class="submenu-indicator"></span></a></li>
