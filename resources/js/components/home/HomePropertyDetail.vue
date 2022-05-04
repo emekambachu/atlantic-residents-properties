@@ -124,14 +124,14 @@
 <!--                    </div>-->
 
                     <!-- Single Block Wrap -->
-                    <div class="property_block_wrap">
+                    <div v-if="property.features !== null" class="property_block_wrap">
 
                         <div class="property_block_wrap_header">
                             <h4 class="property_block_title">Amenities</h4>
                         </div>
 
                         <div class="block-body">
-                            <ul v-if="property.features !== null" class="avl-features third">
+                            <ul class="avl-features third">
                                 <li v-for="(feature, index) in property.features.split(',')" :key="index"
                                     class="active">{{ feature }}</li>
                             </ul>
