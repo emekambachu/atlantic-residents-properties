@@ -192,60 +192,48 @@
                                     <h3 class="price">${{ property.cost }}</h3></div>
                             </div>
                             <div class="side-booking-body">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <div class="form-group">
-                                            <label>Check In</label>
-                                            <div class="cld-box">
-                                                <i class="ti-calendar"></i>
-                                                <input type="text" name="checkin" class="form-control"
-                                                       value="10/24/2020" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <div class="form-group">
-                                            <label>Check Out</label>
-                                            <div class="cld-box">
-                                                <i class="ti-calendar"></i>
-                                                <input type="text" name="checkout" class="form-control"
-                                                       value="10/24/2020" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <div class="form-group">
-                                            <div>
-                                                <label for="guests">Adults</label>
-                                                <div class="guests-box">
-                                                    <button class="counter-btn" type="button" id="cnt-down">
-                                                        <i class="ti-minus"></i></button>
-                                                    <input type="text" id="guestNo" name="guests" value="2"/>
-                                                    <button class="counter-btn" type="button" id="cnt-up">
-                                                        <i class="ti-plus"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <div class="form-group">
-                                            <div class="guests">
-                                                <label>Kids</label>
-                                                <div class="guests-box">
-                                                    <button class="counter-btn" type="button" id="kcnt-down">
-                                                        <i class="ti-minus"></i></button>
-                                                    <input type="text" id="kidsNo" name="kids" value="0"/>
-                                                    <button class="counter-btn" type="button" id="kcnt-up">
-                                                        <i class="ti-plus"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <div class="cld-box">
+                                                <i class="ti-user"></i>
+                                                <input type="text" class="form-control" placeholder="Name"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <div class="cld-box">
+                                                <i class="ti-email"></i>
+                                                <input type="email" class="form-control" placeholder="Name"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Mobile</label>
+                                            <div class="cld-box">
+                                                <i class="ti-mobile"></i>
+                                                <input type="tel" class="form-control" placeholder="Name"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Message</label>
+                                            <div class="cld-box">
+                                                <i class="ti-text"></i>
+                                                <textarea name="message"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="stbooking-footer mt-1">
                                             <div class="form-group mb-0 pb-0">
-                                                <a href="#" class="btn book_btn theme-bg">Book an inspection</a>
+                                                <a href="#" class="btn book_btn theme-bg">Email Agent</a>
                                             </div>
                                         </div>
                                     </div>
