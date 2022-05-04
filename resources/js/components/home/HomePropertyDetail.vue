@@ -131,7 +131,7 @@
                         </div>
 
                         <div class="block-body">
-                            <ul v-if="property.features.length" class="avl-features third">
+                            <ul v-if="property.features" class="avl-features third">
                                 <li v-for="(feature, index) in property.features.split(',')" :key="index"
                                     class="active">{{ feature }}</li>
                             </ul>
