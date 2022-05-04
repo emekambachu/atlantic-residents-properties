@@ -199,7 +199,7 @@
                                             <label>Name</label>
                                             <div class="cld-box">
                                                 <i class="ti-user"></i>
-                                                <input type="text" class="form-control" placeholder="Name"/>
+                                                <input type="text" class="form-control"/>
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
                                             <label>Email</label>
                                             <div class="cld-box">
                                                 <i class="ti-email"></i>
-                                                <input type="email" class="form-control" placeholder="Name"/>
+                                                <input type="email" class="form-control"/>
                                             </div>
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@
                                             <label>Mobile</label>
                                             <div class="cld-box">
                                                 <i class="ti-mobile"></i>
-                                                <input type="tel" class="form-control" placeholder="Name"/>
+                                                <input type="tel" class="form-control"/>
                                             </div>
                                         </div>
                                     </div>
@@ -226,7 +226,7 @@
                                             <label>Message</label>
                                             <div class="cld-box">
                                                 <i class="ti-text"></i>
-                                                <input type="text" class="form-control" placeholder="Name"/>
+                                                <input type="text" class="form-control"/>
                                             </div>
                                         </div>
                                     </div>
