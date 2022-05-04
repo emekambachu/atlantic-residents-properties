@@ -150,7 +150,7 @@
                                         <div class="form-group">
                                             <label>Features</label>
                                             <div class="filter-checkbox">
-                                                <input id="check-ac" type="checkbox" value="Air condition"
+                                                <input id="check-ac" type="checkbox" value="air condition"
                                                        v-model="form.features">
                                                 <label for="check-ac">Air condition</label>
 
