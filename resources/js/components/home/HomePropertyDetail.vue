@@ -226,7 +226,7 @@
                                             <label>Message</label>
                                             <div class="cld-box">
                                                 <i class="ti-text"></i>
-                                                <textarea name="message"></textarea>
+                                                <input type="text" class="form-control" placeholder="Name"/>
                                             </div>
                                         </div>
                                     </div>
