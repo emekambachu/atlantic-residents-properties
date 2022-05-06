@@ -43,7 +43,7 @@ class UserAccountController extends Controller
         $input = $request->all();
         $rules = array(
             'name' => 'required',
-            'email' => 'required|email|unique:users,'.Auth::user()->id,
+            'email' => 'required|email|unique:users,email,'.Auth::user()->id,
             'mobile' => 'nullable',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5048',
         );
@@ -56,7 +56,7 @@ class UserAccountController extends Controller
         }
 
         if($request->hasFile('image') && $file = $request->file('image')){
-            $path = 'photos/user/';
+            $path = 'photos/users/';
             if(!File::exists($path)){
                 File::makeDirectory($path, $mode = 0777, true, true);
             }
@@ -76,6 +76,8 @@ class UserAccountController extends Controller
             // $background->insert($convert_image, 'center');
             $convert_image->save($path . '/' . $name);
             $input['image'] = $name;
+        }else{
+            $input['image'] = $user->image;
         }
 
         $user->update($input);

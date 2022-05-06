@@ -190,7 +190,9 @@
                             <div class="side-booking-body">
                                 <div class="agent-_blocks_title">
                                     <div class="agent-_blocks_thumb">
-                                        <img src="/assets/img/user-6.jpg" alt="">
+                                        <img v-if="property.user.image !== null"
+                                             :src="'/photos/users/'+property.user.image" alt="">
+                                        <img v-else src="/images/user.png" alt="">
                                     </div>
                                     <div class="agent-_blocks_caption">
                                         <h4><a href="#">{{ property.user.name }}</a></h4>
@@ -201,7 +203,7 @@
 
                                 <span id="number" data-last="+1234567896">
 											<span><i class="ti-headphone-alt"></i><a class="see">
-                                                +355(44)35...Show</a></span>
+                                                {{ property.user.mobile }}</a></span>
 										</span>
                             </div>
                         </div>

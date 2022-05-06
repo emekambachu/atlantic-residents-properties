@@ -42,8 +42,12 @@
                             <form @submit.prevent="updateProfile">
                                 <div class="row">
                                     <div class="col-md-4 offset-md-4">
-                                        <div v-if="validationAlert" class="bg-danger p-1 text-white">
+                                        <div v-if="errors.length > 0"
+                                             class="bg-danger p-1 text-white">
                                             {{ validationAlert }}
+                                            <p v-for="(error, index) in errors" :key="index">
+                                                {{ error }}
+                                            </p>
                                         </div>
                                         <!-- Avatar -->
                                         <div class="edit-profile-photo">
@@ -120,6 +124,7 @@
                 },
                 imageThumb: null,
                 validationAlert: '',
+                errors: []
             }
         },
         methods: {
@@ -159,7 +164,7 @@
                 // Loading
                 Swal.fire({
                     title: 'Please Wait !',
-                    html: 'Submitting',// add html attribute if you want or remove
+                    html: 'Updating',// add html attribute if you want or remove
                     allowOutsideClick: false,
                     showCancelButton: false,
                     showConfirmButton: false,
@@ -169,41 +174,38 @@
                 });
 
                 let formData = new FormData();
-                formData.append("title", this.form.title);
-                formData.append("property_type_id", this.form.property_type_id);
-                formData.append("state_id", this.form.state_id);
-                formData.append("address", this.form.address);
-                formData.append("description", this.form.description);
-                formData.append("bedrooms", this.form.bedrooms);
-                formData.append("bathrooms", this.form.bathrooms);
-                formData.append("living_rooms", this.form.living_rooms);
-                formData.append("cost", this.form.cost);
-                formData.append("features", this.form.features);
-
-                formData.append("image1", this.form.image1);
-                formData.append("image2", this.form.image2);
-                if(this.form.image3){
-                    formData.append("image3", this.form.image3);
-                }
-                if(this.form.image4){
-                    formData.append("image4", this.form.image4);
-                }
-                if(this.form.image5){
-                    formData.append("image5", this.form.image5);
+                formData.append("name", this.form.name);
+                formData.append("email", this.form.email);
+                formData.append("mobile", this.form.mobile);
+                if(this.form.imageThumb){
+                    formData.append("image", this.form.image);
                 }
 
                 let config = {
                     headers: { 'content-type': 'multipart/form-data' }
                 }
-                axios.post('/api/realtor/property/submit', formData, config)
+                axios.post('/api/user/profile/update', formData, config)
                     .then((response) => {
-                        response.data.success === true ? this.formSuccess(response) : this.formError(response);
-                        this.messageAlert = response.data.message;
-                        console.log(response.data.message);
+                        response.data.success === true ? [
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Submitted',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        ] : [
+                            console.log(response.data.errors),
+                            this.errors = response.data.errors,
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error updating profile',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        ];
                     }).catch((error) => {
-                    console.log(error);
-                }).finally(() => {
-                    this.formLoading = false;
+                    console.log(error.data.errors),
+                        this.errors = error.data.errors;
                 });
             },
 

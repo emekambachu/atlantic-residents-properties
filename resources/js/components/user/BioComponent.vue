@@ -1,6 +1,7 @@
 <template>
     <div class="account-img">
-        <img src="/images/user.png" alt="" />
+        <img v-if="user.image !== null" :src="'/photos/users/'+user.image" alt="" />
+        <img v-else src="/images/user.png" alt="" />
     </div>
     <h4 class="name text-white">Howdy, {{ user.name }}</h4>
 </template>
@@ -9,16 +10,14 @@
     export default {
         data(){
             return{
-                user: {
-                    name: '',
-                },
+                user: {},
             }
         },
 
         methods: {
             loadBio(){
                 axios.get('/api/user/authenticate').then((response) => {
-                    this.user.name = response.data.name;
+                    this.user = response.data;
                 });
             }
         },
