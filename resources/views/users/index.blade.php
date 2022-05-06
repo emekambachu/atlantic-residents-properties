@@ -30,7 +30,7 @@
     <!-- Vue.js -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <title> Realtor Dashboard | Atlantic Residents Properties</title>
+    <title>Realtor Dashboard | Atlantic Residents Properties</title>
 
 </head>
 <body>
@@ -83,6 +83,15 @@
                             exact
                             to="/user/profile">
                             <i class="ion-ios-person"></i>Profile
+                        </router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                            class="nav-link"
+                            exact
+                            to="/user/logout">
+                            <i class="ion-ios-locked"></i>Logout
                         </router-link>
                     </li>
 
@@ -161,75 +170,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-8">
-                        <div class="header-button">
-                            <div class="header-button-item has-noti js-item-menu">
-                                <i class="ion-ios-bell-outline"></i>
-                                <div class="notifi-dropdown js-dropdown">
-                                    <div class="notifi__title">
-                                        <p>You have 2 Notifications</p>
-                                    </div>
-                                    <div class="notifi__item">
-                                        <div class="bg-c1 red">
-                                            <i class="icofont-check"></i>
-                                        </div>
-                                        <div class="content">
-                                            <p>Your listing <b>Hotel Ocean Paradise</b> has been approved!</p>
-                                            <span class="date">5min ago</span>
-                                        </div>
-                                    </div>
-                                    <div class="notifi__item">
-                                        <div class="bg-c1 green">
-                                            <i class="icofont-ui-message"></i>
-                                        </div>
-                                        <div class="content">
-                                            <p>You have 3 unread Messages</p>
-                                            <span class="date">5min ago</span>
-                                        </div>
-                                    </div>
-                                    <div class="notify-bottom text-center pad-tb-20">
-                                        <a href="#">View All Notification</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="header-button-item js-sidebar-btn">
-                                <img src="{{ asset('admin-assets/images/clients/reviewer-4.png') }}" alt="...">
-                                <span>Steve <i class="ion-arrow-down-b"></i></span>
-                            </div>
-                            <div class="setting-menu js-right-sidebar d-none d-lg-block">
-                                <div class="account-dropdown__body">
-                                    <div class="account-dropdown__item">
-                                        <a href="">
-                                            <i class="ion-ios-gear-outline"></i>Dashboard</a>
-                                    </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="">
-                                            <i class="ion-social-buffer-outline"></i>Listings</a>
-                                    </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="">
-                                            <i class="ion-ios-copy-outline"></i>Bookings</a>
-                                    </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="">
-                                            <i class="ion-ios-star-outline"></i>Reviews</a>
-                                    </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="">
-                                            <i class="ion-ios-email-outline"></i>Inbox</a>
-                                    </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="">
-                                            <i class="ion-ios-person-outline"></i>Profile</a>
-                                    </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="">
-                                            <i class="ion-ios-upload-outline"></i>Logout</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </header>

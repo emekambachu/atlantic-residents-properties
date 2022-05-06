@@ -69,7 +69,9 @@ class LoginController extends Controller
 
     //perform logout
     public function logout(){
-        Auth::guard()->logout();
-        return redirect()->route('login');
+        Auth::guard('web')->logout();
+        return response()->json([
+            "success" => true,
+        ]);
     }
 }

@@ -101,6 +101,16 @@ const routes = [
         }
     },
 
+    {
+        path: '/user/logout',
+        name: "UserLogout",
+        beforeEnter: (to, from, next) => {
+            axios.get('/api/user/logout').then(() => {
+                window.location.href = '/login';
+            });
+        }
+    },
+
 ];
 
 const router = createRouter({

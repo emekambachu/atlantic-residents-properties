@@ -66,7 +66,6 @@
                                     <li><span class="bed">{{ property.bedrooms }} Beds</span></li>
                                     <li><span class="bath">{{ property.bathrooms }} Bath</span></li>
                                     <li><span class="gar">{{ property.living_rooms }} Living room</span></li>
-                                    <li><span class="sqft">800 sqft</span></li>
                                 </ul>
                                 <h2>{{ property.address }}</h2>
                                 <span><i class="lni-map-marker"></i> {{ property.country.name }}</span>
@@ -157,7 +156,7 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label>eMmail ID</label>
+                                        <label>Email</label>
                                         <input type="email" class="form-control">
                                     </div>
                                 </div>
@@ -186,10 +185,31 @@
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="property-sidebar">
 
+                        <!-- Agent Detail -->
+                        <div class="sider_blocks_wrap">
+                            <div class="side-booking-body">
+                                <div class="agent-_blocks_title">
+                                    <div class="agent-_blocks_thumb">
+                                        <img src="/assets/img/user-6.jpg" alt="">
+                                    </div>
+                                    <div class="agent-_blocks_caption">
+                                        <h4><a href="#">{{ property.user.name }}</a></h4>
+                                        <span class="approved-agent"><i class="ti-check"></i>approved</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <span id="number" data-last="+1234567896">
+											<span><i class="ti-headphone-alt"></i><a class="see">
+                                                +355(44)35...Show</a></span>
+										</span>
+                            </div>
+                        </div>
+
                         <div class="sider_blocks_wrap">
                             <div class="side-booking-header">
                                 <div class="sb-header-left">
-                                    <h3 class="price">${{ property.cost }}</h3></div>
+                                    <h3 class="price">${{ addComma(property.cost) }}</h3></div>
                             </div>
                             <div class="side-booking-body">
 
@@ -242,30 +262,6 @@
                             </div>
                         </div>
 
-                        <!-- Agent Detail -->
-                        <div class="sider_blocks_wrap">
-                            <div class="side-booking-body">
-                                <div class="agent-_blocks_title">
-
-                                    <div class="agent-_blocks_thumb"><img src="/assets/img/user-6.jpg" alt=""></div>
-                                    <div class="agent-_blocks_caption">
-                                        <h4><a href="#">Shivangi Preet</a></h4>
-                                        <span class="approved-agent"><i class="ti-check"></i>approved</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-
-                                <a href="#" class="agent-btn-contact" data-toggle="modal"
-                                   data-target="#autho-message"><i class="ti-comment-alt"></i>Message</a>
-
-                                <span id="number" data-last="+1234567896">
-											<span><i class="ti-headphone-alt"></i><a class="see">
-                                                +355(44)35...Show</a></span>
-										</span>
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
 
@@ -305,6 +301,11 @@
 
             }
         },
+        methods: {
+            addComma(number){
+                return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            },
+        }
     }
 </script>
 

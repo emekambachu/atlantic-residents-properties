@@ -1,6 +1,6 @@
 <template>
     <div class="account-img">
-        <img src="/admin-assets/images/clients/reviewer-4.png" alt="" />
+        <img src="/images/user.png" alt="" />
     </div>
     <h4 class="name text-white">Howdy, {{ user.name }}</h4>
 </template>

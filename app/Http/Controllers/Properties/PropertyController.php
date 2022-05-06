@@ -20,7 +20,7 @@ class PropertyController extends Controller
     }
 
     public function show($id){
-        $data['property'] = PropertyDetail::with('country', 'property_type')
+        $data['property'] = PropertyDetail::with('country', 'property_type', 'user')
             ->findOrFail($id);
 
         return view('home.properties.show', $data);

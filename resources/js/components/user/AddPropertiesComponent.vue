@@ -8,8 +8,12 @@
                         <div class="dash-breadcrumb-left">
                             <div class="breadcrumb-menu text-right sm-left">
                                 <ul>
-                                    <li class="active"><a href="#">Home</a></li>
-                                    <li><a href="#">Dashboard</a></li>
+                                    <li class="active"><a href="/">Home</a></li>
+                                    <li>
+                                        <router-link
+                                            exact to="/user">Dashboard
+                                        </router-link>
+                                    </li>
                                     <li>Add Listing</li>
                                 </ul>
                             </div>
@@ -164,23 +168,23 @@
 
                                                 <input id="check-lr" type="checkbox" value="Laundry room"
                                                        v-model="form.features">
-                                                <label for="check-g">Laundry Room</label>
+                                                <label for="check-lr">Laundry Room</label>
 
                                                 <input id="check-i" type="checkbox" value="Internet"
                                                        v-model="form.features">
-                                                <label for="check-g">Internet</label>
+                                                <label for="check-i">Internet</label>
 
                                                 <input id="check-pa" type="checkbox" value="Pets allowed"
                                                        v-model="form.features">
-                                                <label for="check-g">Pets Allowed</label>
+                                                <label for="check-pa">Pets Allowed</label>
 
                                                 <input id="check-ch" type="checkbox" value="Central heating"
                                                        v-model="form.features">
-                                                <label for="check-g">Central heating</label>
+                                                <label for="check-ch">Central heating</label>
 
                                                 <input id="check-sp" type="checkbox" value="Swimming pool"
                                                        v-model="form.features">
-                                                <label for="check-g">Swimming pool</label>
+                                                <label for="check-sp">Swimming pool</label>
                                             </div>
                                         </div>
                                     </div>
