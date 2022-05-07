@@ -23701,7 +23701,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      deleteLoading: false,
       deleted: false
     };
   },
@@ -23709,17 +23708,43 @@ __webpack_require__.r(__webpack_exports__);
     deleteProperty: function deleteProperty() {
       var _this = this;
 
-      this.deleteLoading = true;
-      axios["delete"]('/api/user/property/' + this.id + '/delete').then(function (response) {
-        response.data.success === true ? _this.deleted = true : false;
-        console.log(response.data.properties);
-      })["catch"](function (error) {
-        console.log(error);
+      // Install sweetalert2 to use
+      Swal.fire({
+        title: 'Delete',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Yes',
+        denyButtonText: "No"
+      }).then(function (result) {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          // Loading
+          Swal.fire({
+            title: 'Please Wait !',
+            html: 'Deleting',
+            // add html attribute if you want or remove
+            allowOutsideClick: false,
+            showCancelButton: false,
+            showConfirmButton: false,
+            didOpen: function didOpen() {
+              Swal.showLoading();
+            }
+          });
+          axios["delete"]('/api/user/property/' + _this.id + '/delete').then(function (response) {
+            response.data.success === true ? [Swal.fire({
+              icon: 'success',
+              title: 'Deleted',
+              showConfirmButton: false,
+              timer: 1500
+            }), _this.deleted = true] : false;
+          })["catch"](function (error) {});
+        } else if (result.isDenied) {
+          return false;
+        }
       });
     }
   },
   mounted: function mounted() {},
-  computed: function computed() {},
   watch: function watch() {},
   created: function created() {}
 });
@@ -26760,7 +26785,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.address), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"views\">Views : <span>325</span></div>")]), $data.deleteLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"views\">Views : <span>325</span></div>")]), _ctx.deleteLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     "class": "btn v2",
     exact: "",
     to: {

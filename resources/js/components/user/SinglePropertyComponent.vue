@@ -58,28 +58,53 @@
 
         data(){
             return{
-                deleteLoading: false,
                 deleted: false,
             }
         },
         methods: {
             deleteProperty: function(){
-                this.deleteLoading = true;
-                axios.delete('/api/user/property/'+this.id+'/delete')
-                    .then((response) => {
-                        response.data.success === true ? this.deleted = true : false;
-                        console.log(response.data.properties);
-                    }).catch((error) => {
-                    console.log(error);
+                // Install sweetalert2 to use
+                Swal.fire({
+                    title: 'Delete',
+                    showDenyButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: 'Yes',
+                    denyButtonText: `No`,
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        // Loading
+                        Swal.fire({
+                            title: 'Please Wait !',
+                            html: 'Deleting',// add html attribute if you want or remove
+                            allowOutsideClick: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            didOpen: () => {
+                                Swal.showLoading();
+                            },
+                        });
+                        axios.delete('/api/user/property/'+this.id+'/delete')
+                            .then((response) => {
+                                response.data.success === true ? [
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Deleted',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    }),
+                                    this.deleted = true
+                                ] : false;
+                            }).catch((error) => {
+                        });
+                    } else if (result.isDenied) {
+                        return false;
+                    }
                 });
             }
         },
 
         mounted() {
-
-        },
-
-        computed() {
 
         },
 

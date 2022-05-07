@@ -1,4 +1,5 @@
 <template>
+
     <!-- ============================ Hero Banner  Start================================== -->
     <!-- Gallery Part Start -->
     <section class="gallery_parts pt-2 pb-2 d-none d-sm-none d-md-none d-lg-none d-xl-block">
