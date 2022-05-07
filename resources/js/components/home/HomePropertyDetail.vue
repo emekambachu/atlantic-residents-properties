@@ -1,7 +1,7 @@
 <template>
 
     <!--Slick slider, the jquery script should be in the blade file section-->
-    <div class="your-class">
+    <div class="your-class m-2">
         <div v-if="property.image1"><img :src="'/photos/properties/'+property.image1"
                   class="center-cropped" alt=""/></div>
         <div v-if="property.image2"><img :src="'/photos/properties/'+property.image2"
