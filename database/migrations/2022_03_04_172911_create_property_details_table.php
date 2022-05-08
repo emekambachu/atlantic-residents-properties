@@ -31,6 +31,11 @@ class CreatePropertyDetailsTable extends Migration
             $table->binary('image3')->nullable();
             $table->binary('image4')->nullable();
             $table->binary('image5')->nullable();
+            $table->binary('image6')->nullable();
+            $table->binary('image7')->nullable();
+            $table->binary('image8')->nullable();
+            $table->binary('image9')->nullable();
+            $table->binary('image10')->nullable();
             $table->text('features')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();

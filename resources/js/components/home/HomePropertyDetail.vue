@@ -1,7 +1,7 @@
 <template>
 
     <!--Slick slider, the jquery script should be in the blade file section-->
-    <div class="your-class m-2">
+    <div class="your-class m-5">
         <div v-if="property.image1"><img :src="'/photos/properties/'+property.image1"
                   class="center-cropped" alt=""/></div>
         <div v-if="property.image2"><img :src="'/photos/properties/'+property.image2"
@@ -14,57 +14,6 @@
                   class="center-cropped" alt="" /></div>
     </div>
 
-    <!-- ============================ Hero Banner  Start================================== -->
-    <!-- Gallery Part Start -->
-<!--    <section class="gallery_parts pt-2 pb-2 d-none d-sm-none d-md-none d-lg-none d-xl-block">-->
-<!--        <div class="container">-->
-<!--            <div class="row align-items-center">-->
-<!--                <div class="col-lg-8 col-md-7 col-sm-12 pr-1">-->
-<!--                    <div class="gg_single_part left">-->
-<!--                        <a :href="'/photos/properties/'+property.image1" class="mfp-gallery">-->
-<!--                            <img :src="'/photos/properties/'+property.image1"-->
-<!--                                 class="img-fluid mx-auto" alt="" /></a></div>-->
-<!--                </div>-->
-<!--                <div class="col-lg-4 col-md-5 col-sm-12 pl-1">-->
-<!--                    <div v-if="property.image2" class="gg_single_part-right min">-->
-<!--                        <a :href="'/photos/properties/'+property.image2" class="mfp-gallery">-->
-<!--                            <img :src="'/photos/properties/'+property.image2"-->
-<!--                                 class="img-fluid mx-auto" alt="" /></a></div>-->
-<!--                    <div v-if="property.image3" class="gg_single_part-right min mt-2 mb-2">-->
-<!--                        <a :href="'/photos/properties/'+property.image3" class="mfp-gallery">-->
-<!--                            <img :src="'/photos/properties/'+property.image3"-->
-<!--                                 class="img-fluid mx-auto" alt="" /></a></div>-->
-<!--                    <div v-if="property.image4" class="gg_single_part-right min">-->
-<!--                        <a :href="'/photos/properties/'+property.image4" class="mfp-gallery">-->
-<!--                            <img :src="'/photos/properties/'+property.image4"-->
-<!--                                 class="img-fluid mx-auto" alt="" /></a></div>-->
-<!--                    <div v-if="property.image5" class="gg_single_part-right min">-->
-<!--                        <a :href="'/photos/properties/'+property.image5" class="mfp-gallery">-->
-<!--                            <img :src="'/photos/properties/'+property.image5"-->
-<!--                                 class="img-fluid mx-auto" alt="" /></a></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-    <div class="featured_slick_gallery gray d-block d-md-block d-lg-block d-xl-none">
-        <div class="featured_slick_gallery-slide">
-            <div class="featured_slick_padd">
-                <a :href="'/photos/properties/'+property.image1" class="mfp-gallery">
-                    <img :src="'/photos/properties/'+property.image1" class="img-fluid mx-auto" alt="" /></a></div>
-            <div v-if="property.image2" class="featured_slick_padd">
-                <a :href="'/photos/properties/'+property.image2" class="mfp-gallery">
-                    <img :src="'/photos/properties/'+property.image2" class="img-fluid mx-auto" alt="" /></a></div>
-            <div v-if="property.image3" class="featured_slick_padd">
-                <a :href="'/photos/properties/'+property.image3" class="mfp-gallery">
-                    <img :src="'/photos/properties/'+property.image3" class="img-fluid mx-auto" alt="" /></a></div>
-            <div v-if="property.image4" class="featured_slick_padd">
-                <a :href="'/photos/properties/'+property.image4" class="mfp-gallery">
-                    <img :src="'/photos/properties/'+property.image4" class="img-fluid mx-auto" alt="" /></a></div>
-        </div>
-    </div>
-    <!-- ============================ Hero Banner End ================================== -->
-
     <!-- ============================ Property Detail Start ================================== -->
     <section class="pt-4">
         <div class="container">
@@ -72,9 +21,7 @@
 
                 <!-- property main detail -->
                 <div class="col-lg-8 col-md-12 col-sm-12">
-
                     <div class="property_info_detail_wrap mb-4">
-
                         <div class="property_info_detail_wrap_first">
                             <div class="pr-price-into">
                                 <ul class="prs_lists">

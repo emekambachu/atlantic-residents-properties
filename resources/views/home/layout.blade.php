@@ -15,6 +15,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/img/logoonly.png') }}" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -104,7 +105,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-5 col-md-5">
+                    <div class="col-md-5">
                         <div class="footer_widget">
                             <img src="{{ asset('assets/img/logo-light.png') }}"
                                  class="img-footer small mb-2" alt="" />
@@ -122,7 +123,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-7 ml-auto">
+                    <div class="col-md-7 ml-auto">
                         <div class="row">
 
                             <div class="col-lg-6 col-md-6">
@@ -145,7 +146,14 @@
                                         <li><strong>Address: </strong> 345 E. Esplanade Ave 0491 San Jacinto, CA, 96589</li>
                                         <li><strong>Address: </strong> 3300 S I 10 SERVICE METAIRIE LA 70001-1973 US</li>
                                     </ul>
+                                    <p>
+                                        Social: <a href="https://m.facebook.com/Atlantic-Resident-Properties-101316005915917/" target="_blank">
+                                            <img src="{{ asset('/images/icons/facebook.png') }}" width="40"/></a>
+                                        <a href="https://www.instagram.com/AtlanticResidentProperties209/" target="_blank">
+                                            <img src="{{ asset('/images/icons/instagram.png') }}" width="40"/></a>
+                                    </p>
                                 </div>
+
                             </div>
 
                         </div>

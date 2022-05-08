@@ -26,12 +26,21 @@ class PropertyDetail extends Model
         'image3',
         'image4',
         'image5',
+        'image6',
+        'image7',
+        'image8',
+        'image9',
+        'image10',
         'features',
         'status'
     ];
 
     public function user(){
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function property_photos(){
+        return $this->hasMany(PropertyPhoto::class, 'property_type_id', 'id');
     }
 
     public function state(){
