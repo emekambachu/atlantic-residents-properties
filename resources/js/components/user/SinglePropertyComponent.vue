@@ -2,32 +2,30 @@
     <div v-if="!deleted" class="most-viewed-item">
         <div class="most-viewed-img">
             <a href="#">
-                <img :src="'/photos/properties/'+ image1" alt="...">
+                <img v-for="(photo, index) in property.property_photos.slice(0, 1)"
+                     :key="photo.id" v-if="index = 1"
+                     :src="'/photos/properties/'+ photo.image">
             </a>
         </div>
         <div class="most-viewed-detail">
             <a class="category" href="#">
                 <span class="list-bg aqua"><i class="icofont-hotel"></i></span>
-                {{ type.name }}
+                {{ property.name }}
             </a>
-            <h3><a href="">{{ title }}</a></h3>
+            <h3><a href="">{{ property.title }}</a></h3>
             <p class="list-address">
                 <i class="icofont-google-map"></i>
-                {{ address }}</p>
+                {{ property.address }}</p>
             <!--<div class="views">Views : <span>325</span></div>-->
         </div>
 
-        <div v-if="deleteLoading" class="text-center">
-            <img src="/images/loaders/loader.gif" width="70"/>
-        </div>
-
-        <div v-else class="listing-button">
+        <div class="listing-button">
             <router-link
                 class="btn v2"
                 exact
-                :to="{name: 'EditProperty', params: { id: id },}">
+                :to="{name: 'EditProperty', params: { id: property.id },}">
                 <i class="ion-edit"></i> Edit </router-link>
-            <a @click.prevent="deleteProperty(id)" class="btn v5">
+            <a @click.prevent="deleteProperty(property.id)" class="btn v5">
                 <i class="ion-android-delete"></i> Delete</a>
         </div>
 
@@ -37,23 +35,7 @@
 <script>
     export default {
         props: {
-            id: Number,
-            type: Object,
-            country: Object,
-            title: String,
-            address: String,
-            description: String,
-            bedrooms: Number,
-            living_rooms: Number,
-            bathrooms: Number,
-            cost: Number,
-            image1: String,
-            image2: String,
-            image3: String,
-            image4: String,
-            image5: String,
-            features: String,
-            status: Boolean,
+            property: Object,
         },
 
         data(){
@@ -84,7 +66,7 @@
                                 Swal.showLoading();
                             },
                         });
-                        axios.delete('/api/user/property/'+this.id+'/delete')
+                        axios.delete('/api/user/property/'+this.property.id+'/delete')
                             .then((response) => {
                                 response.data.success === true ? [
                                     Swal.fire({

@@ -13,14 +13,15 @@ class PropertyController extends Controller
 {
     public function index(){
 
-        $data['properties'] = PropertyDetail::with('country', 'property_type')
+        $data['properties'] = PropertyDetail::with('country', 'property_type', 'property_photos')
+            ->has('property_photos')
             ->latest()->paginate(12);
 
         return view('home.properties.index', $data);
     }
 
     public function show($id){
-        $data['property'] = PropertyDetail::with('country', 'property_type', 'user')
+        $data['property'] = PropertyDetail::with('country', 'property_type', 'user', 'property_photos')
             ->findOrFail($id);
 
         return view('home.properties.show', $data);

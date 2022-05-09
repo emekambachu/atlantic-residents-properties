@@ -5,15 +5,18 @@
                 <div class="_exlio_125">{{ property.country.name }}</div>
                 <div class="list-img-slide">
                     <div class="click">
-                        <div><a href="">
-                            <img :src="'/photos/properties/' + property.image1"
-                                 class="img-fluid mx-auto" alt=""></a></div>
-                        <div v-if="property.image2"><a href="">
-                            <img :src="'/photos/properties/' + property.image2"
-                                 class="img-fluid mx-auto" alt=""></a></div>
-                        <div v-if="property.image3"><a href="">
-                            <img :src="'/photos/properties/' + property.image3"
-                                 class="img-fluid mx-auto" alt=""></a></div>
+
+                        <div v-for="(photo, index) in property.property_photos" :key="index">
+                            <a href=""><img :src="'/photos/properties/' + photo.image"
+                                 class="img-fluid mx-auto" alt=""></a>
+                        </div>
+
+<!--                        <div v-if="property.image2"><a href="">-->
+<!--                            <img :src="'/photos/properties/' + property.image2"-->
+<!--                                 class="img-fluid mx-auto" alt=""></a></div>-->
+<!--                        <div v-if="property.image3"><a href="">-->
+<!--                            <img :src="'/photos/properties/' + property.image3"-->
+<!--                                 class="img-fluid mx-auto" alt=""></a></div>-->
                     </div>
                 </div>
             </div>

@@ -2,16 +2,10 @@
 
     <!--Slick slider, the jquery script should be in the blade file section-->
     <div class="your-class m-5">
-        <div v-if="property.image1"><img :src="'/photos/properties/'+property.image1"
-                  class="center-cropped" alt=""/></div>
-        <div v-if="property.image2"><img :src="'/photos/properties/'+property.image2"
-                  class="center-cropped" alt="" /></div>
-        <div v-if="property.image3"><img :src="'/photos/properties/'+property.image3"
-                  class="center-cropped" alt="" /></div>
-        <div v-if="property.image4"><img :src="'/photos/properties/'+property.image4"
-                  class="center-cropped" alt="" /></div>
-        <div v-if="property.image5"><img :src="'/photos/properties/'+property.image5"
-                  class="center-cropped" alt="" /></div>
+        <div v-for="(photo, index) in property.property_photos" :key="index">
+            <img :src="'/photos/properties/'+photo.image"
+                 class="center-cropped" alt=""/>
+        </div>
     </div>
 
     <!-- ============================ Property Detail Start ================================== -->

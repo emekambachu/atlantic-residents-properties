@@ -9,7 +9,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
         .center-cropped {
-            object-fit: none; /* Do not scale the image */
+            object-fit: cover; /* Do not scale the image */
             object-position: center; /* Center the image within the element */
             width: 700px;
             height: 400px;

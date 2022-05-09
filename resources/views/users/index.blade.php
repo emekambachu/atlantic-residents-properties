@@ -27,6 +27,9 @@
           media="screen" id="style-colors" />
     <!-- Document Title -->
 
+    <!--Font awesome-->
+    <script src="https://kit.fontawesome.com/43c0a0512a.js" crossorigin="anonymous"></script>
+
     <!-- Vue.js -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

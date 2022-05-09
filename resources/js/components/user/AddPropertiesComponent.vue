@@ -189,80 +189,94 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-12">
                                         <div class="form-group">
                                             <div class="add-listing__input-file-box">
                                                 <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage1">
+                                                       name="file" id="file" multiple
+                                                       @change="uploadImages">
                                                 <div class="add-listing__input-file-wrap">
                                                     <i class="ion-ios-cloud-upload"></i>
                                                     <p>Click to upload your images</p>
                                                 </div>
                                             </div>
-                                            <img :src="form.image1preview" width="100"/>
+
+                                            <div class="d-flex justify-content-center">
+                                                <p v-if="imageValidation !== ''"
+                                                   class="p-1 text-white text-center"></p>
+                                                <div v-for="(image, index) in images" :key="index"
+                                                     style="width:100px; margin-right:5px;"
+                                                     class="text-center">
+                                                    <img :src="image.src" :alt="image.file.name"
+                                                         :title="image.file.name"/><br>
+                                                    <i @click.prevent="removeImage(index)"
+                                                       class="fa-duotone fa-x bg-danger text-white p-1"
+                                                       title="remove"></i>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
 
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <div class="add-listing__input-file-box">
-                                                <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage2">
-                                                <div class="add-listing__input-file-wrap">
-                                                    <i class="ion-ios-cloud-upload"></i>
-                                                    <p>Click to upload image</p>
-                                                </div>
-                                            </div>
-                                            <img :src="form.image2preview"/>
-                                        </div>
-                                    </div>
+<!--                                    <div class="col-md-2">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="add-listing__input-file-box">-->
+<!--                                                <input class="add-listing__input-file" type="file"-->
+<!--                                                       name="file" id="file"-->
+<!--                                                       @change="uploadImage2">-->
+<!--                                                <div class="add-listing__input-file-wrap">-->
+<!--                                                    <i class="ion-ios-cloud-upload"></i>-->
+<!--                                                    <p>Click to upload image</p>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <img :src="form.image2preview"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <div class="add-listing__input-file-box">
-                                                <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage3">
-                                                <div class="add-listing__input-file-wrap">
-                                                    <i class="ion-ios-cloud-upload"></i>
-                                                    <p>Click to upload your images</p>
-                                                </div>
-                                            </div>
-                                            <img :src="form.image3preview"/>
-                                        </div>
-                                    </div>
+<!--                                    <div class="col-md-2">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="add-listing__input-file-box">-->
+<!--                                                <input class="add-listing__input-file" type="file"-->
+<!--                                                       name="file" id="file"-->
+<!--                                                       @change="uploadImage3">-->
+<!--                                                <div class="add-listing__input-file-wrap">-->
+<!--                                                    <i class="ion-ios-cloud-upload"></i>-->
+<!--                                                    <p>Click to upload your images</p>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <img :src="form.image3preview"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <div class="add-listing__input-file-box">
-                                                <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage4">
-                                                <div class="add-listing__input-file-wrap">
-                                                    <i class="ion-ios-cloud-upload"></i>
-                                                    <p>Click to upload your images</p>
-                                                </div>
-                                            </div>
-                                            <img :src="form.image4preview"/>
-                                        </div>
-                                    </div>
+<!--                                    <div class="col-md-2">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="add-listing__input-file-box">-->
+<!--                                                <input class="add-listing__input-file" type="file"-->
+<!--                                                       name="file" id="file"-->
+<!--                                                       @change="uploadImage4">-->
+<!--                                                <div class="add-listing__input-file-wrap">-->
+<!--                                                    <i class="ion-ios-cloud-upload"></i>-->
+<!--                                                    <p>Click to upload your images</p>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <img :src="form.image4preview"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <div class="add-listing__input-file-box">
-                                                <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage5">
-                                                <div class="add-listing__input-file-wrap">
-                                                    <i class="ion-ios-cloud-upload"></i>
-                                                    <p>Click here to upload your images</p>
-                                                </div>
-                                            </div>
-                                            <img :src="form.image5preview">
-                                        </div>
-                                    </div>
+<!--                                    <div class="col-md-2">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="add-listing__input-file-box">-->
+<!--                                                <input class="add-listing__input-file" type="file"-->
+<!--                                                       name="file" id="file"-->
+<!--                                                       @change="uploadImage5">-->
+<!--                                                <div class="add-listing__input-file-wrap">-->
+<!--                                                    <i class="ion-ios-cloud-upload"></i>-->
+<!--                                                    <p>Click here to upload your images</p>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <img :src="form.image5preview">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
                                     <div class="col-12">
                                         <button type="submit" class="btn v8 mar-top-15">Submit Property</button>
@@ -297,17 +311,8 @@
                     living_rooms: '',
                     cost: '',
                     features: [],
-                    image1: null,
-                    image1preview: null,
-                    image2: null,
-                    image2preview: null,
-                    image3: null,
-                    image3preview: null,
-                    image4: null,
-                    image4preview: null,
-                    image5: null,
-                    image5preview: null,
                 },
+                images: [],
 
                 states: [],
                 countries: [],
@@ -318,6 +323,7 @@
                 successAlert: false,
                 errorAlert: false,
                 messageAlert: '',
+                imageValidation: '',
             }
         },
 
@@ -338,17 +344,20 @@
                 formData.append("cost", this.form.cost);
                 formData.append("features", this.form.features);
 
-                formData.append("image1", this.form.image1);
-                formData.append("image2", this.form.image2);
-                if(this.form.image3){
-                    formData.append("image3", this.form.image3);
+                for (let i = 0; i < this.images.length; i++) {
+                    formData.append("images[]", this.images[i].file);
                 }
-                if(this.form.image4){
-                    formData.append("image4", this.form.image4);
-                }
-                if(this.form.image5){
-                    formData.append("image5", this.form.image5);
-                }
+
+                // formData.append("image2", this.form.image2);
+                // if(this.form.image3){
+                //     formData.append("image3", this.form.image3);
+                // }
+                // if(this.form.image4){
+                //     formData.append("image4", this.form.image4);
+                // }
+                // if(this.form.image5){
+                //     formData.append("image5", this.form.image5);
+                // }
 
                 let config = {
                     headers: { 'content-type': 'multipart/form-data' }
@@ -366,78 +375,96 @@
             },
 
             // upload and preview image
-            uploadImage1: function(event){
-                //Assign image and path to this variable
-                this.form.image1 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image1, file);
-                // assign variable to the image preview
-                this.form.image1preview = URL.createObjectURL(file);
-            },
-            uploadImage2: function(event){
-                //Assign image and path to this variable
-                this.form.image2 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image2, file);
-                // assign variable to the image preview
-                this.form.image2preview = URL.createObjectURL(file);
-            },
-            uploadImage3: function(event){
-                //Assign image and path to this variable
-                this.form.image3 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image3, file);
-                // assign variable to the image preview
-                this.form.image3preview = URL.createObjectURL(file);
-            },
-            uploadImage4: function(event){
-                //Assign image and path to this variable
-                this.form.image4 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image4, file);
-                // assign variable to the image preview
-                this.form.image4preview = URL.createObjectURL(file);
-            },
-            uploadImage5: function(event){
-                //Assign image and path to this variable
-                this.form.image5 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image5, file);
-                // assign variable to the image preview
-                this.form.image5preview = URL.createObjectURL(file);
+            uploadImages: function(event){
+                // assign selected files to event array
+                // loop through files and validate
+                // Add to img object and push to images array
+                let selectedFiles = event.target.files;
+                for (let i = 0; i < selectedFiles.length; i++){
+                    if(i >= 15 || this.images.length >= 15){// 15 images max
+                        this.imageValidation = "15 images max";
+                        return false;
+                    }
+                    this.validateImage(selectedFiles[i]);
+                    let img = {
+                        src: URL.createObjectURL(selectedFiles[i]),
+                        file: selectedFiles[i],
+                    }
+                    this.images.push(img);
+                }
             },
 
+            removeImage(index){
+                this.images.splice(index, 1);
+            },
+
+            // uploadImage1: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image1 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image1, file);
+            //     // assign variable to the image preview
+            //     this.form.image1preview = URL.createObjectURL(file);
+            // },
+            // uploadImage2: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image2 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image2, file);
+            //     // assign variable to the image preview
+            //     this.form.image2preview = URL.createObjectURL(file);
+            // },
+            // uploadImage3: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image3 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image3, file);
+            //     // assign variable to the image preview
+            //     this.form.image3preview = URL.createObjectURL(file);
+            // },
+            // uploadImage4: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image4 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image4, file);
+            //     // assign variable to the image preview
+            //     this.form.image4preview = URL.createObjectURL(file);
+            // },
+            // uploadImage5: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image5 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image5, file);
+            //     // assign variable to the image preview
+            //     this.form.image5preview = URL.createObjectURL(file);
+            // },
+
             // Validate image
-            validateImage: function(img, file){
+            validateImage: function(img){
                 console.log(img.type +' - '+ img.size);
                 let fileType = ['image/png', 'image/jpg', 'image/jpeg']
-                if(fileType.includes(file.type) === false){
-                    img = null;
-                    this.errorAlert = true;
-                    this.messageAlert = "Incorrect format for "+file.name;
+                if(fileType.includes(img.type) === false){
+                    this.imageValidation = "Incorrect format for "+img.name;
                     return false;
                 }else{
-                    this.errorAlert = false;
-                    this.messageAlert = '';
+                    this.imageValidation = '';
                 }
 
                 if(img.size > 3000000){
-                    this.errorAlert = true;
-                    this.messageAlert = "Image can't be greater than 3mb for"+file.name;
+                    this.imageValidation = "Image can't be greater than 3mb for "+img.name;
                     return false;
                 }else{
-                    this.errorAlert = false;
-                    this.messageAlert = '';
+                    this.imageValidation = '';
                 }
             },
 
@@ -449,11 +476,12 @@
                 Object.keys(this.form).forEach(function(key,index) {
                     self.form[key] = '';
                 });
-                this.image1preview = null;
-                this.image2preview = null;
-                this.image3preview = null;
-                this.image4preview = null;
-                this.image5preview = null;
+                this.images = [];
+                // this.image1preview = null;
+                // this.image2preview = null;
+                // this.image3preview = null;
+                // this.image4preview = null;
+                // this.image5preview = null;
             },
 
             formError: function(response){

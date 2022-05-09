@@ -187,93 +187,33 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-12">
                                         <div class="form-group">
                                             <div class="add-listing__input-file-box">
                                                 <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage1">
+                                                       name="file" id="file" multiple
+                                                       @change="uploadImages">
                                                 <div class="add-listing__input-file-wrap">
                                                     <i class="ion-ios-cloud-upload"></i>
                                                     <p>Click to upload your images</p>
                                                 </div>
                                             </div>
-                                            <img v-if="form.image1preview === null && form.image1 !== null"
-                                                 :src="'/photos/properties/'+form.image1"
-                                                 width="100"/>
-                                            <img v-if="form.image1preview" :src="form.image1preview" width="100"/>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <div class="add-listing__input-file-box">
-                                                <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage2">
-                                                <div class="add-listing__input-file-wrap">
-                                                    <i class="ion-ios-cloud-upload"></i>
-                                                    <p>Click to upload image</p>
+                                            <div class="d-flex justify-content-center">
+                                                <p v-if="imageValidation !== ''"
+                                                   class="p-1 text-white text-center"></p>
+                                                <div v-for="(image, index) in images" :key="index"
+                                                     style="width:100px; margin-right:5px;"
+                                                     class="text-center">
+                                                    <img :src="image.src ? image.src : '/photos/properties/'+image"
+                                                         :alt="image.file.name"
+                                                         :title="image.file.name"/><br>
+                                                    <i @click.prevent="removeImage(index)"
+                                                       class="fa-duotone fa-x bg-danger text-white p-1"
+                                                       title="remove"></i>
                                                 </div>
                                             </div>
-                                            <img v-if="form.image2preview === null && form.image2 !== null"
-                                                 :src="'/photos/properties/'+form.image2"
-                                                 width="100"/>
-                                            <img v-if="form.image2preview" :src="form.image2preview" width="100"/>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <div class="add-listing__input-file-box">
-                                                <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage3">
-                                                <div class="add-listing__input-file-wrap">
-                                                    <i class="ion-ios-cloud-upload"></i>
-                                                    <p>Click to upload your images</p>
-                                                </div>
-                                            </div>
-                                            <img v-if="form.image3preview === null && form.image3 !== null"
-                                                 :src="'/photos/properties/'+form.image3"
-                                                 width="100"/>
-                                            <img v-if="form.image3preview" :src="form.image3preview" width="100"/>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <div class="add-listing__input-file-box">
-                                                <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage4">
-                                                <div class="add-listing__input-file-wrap">
-                                                    <i class="ion-ios-cloud-upload"></i>
-                                                    <p>Click to upload your images</p>
-                                                </div>
-                                            </div>
-                                            <img v-if="form.image4preview === null && form.image4 !== null"
-                                                 :src="'/photos/properties/'+form.image4"
-                                                 width="100"/>
-                                            <img v-if="form.image4preview" :src="form.image4preview" width="100"/>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <div class="add-listing__input-file-box">
-                                                <input class="add-listing__input-file" type="file"
-                                                       name="file" id="file"
-                                                       @change="uploadImage5">
-                                                <div class="add-listing__input-file-wrap">
-                                                    <i class="ion-ios-cloud-upload"></i>
-                                                    <p>Click here to upload your images</p>
-                                                </div>
-                                            </div>
-                                            <img v-if="form.image5preview === null && form.image5 !== null"
-                                                 :src="'/photos/properties/'+form.image5"
-                                                 width="100"/>
-                                            <img v-if="form.image5preview" :src="form.image5preview" width="100"/>
                                         </div>
                                     </div>
 
@@ -310,18 +250,10 @@
                     living_rooms: '',
                     cost: '',
                     features: [],
-                    image1: null,
-                    image1preview: null,
-                    image2: null,
-                    image2preview: null,
-                    image3: null,
-                    image3preview: null,
-                    image4: null,
-                    image4preview: null,
-                    image5: null,
-                    image5preview: null,
                 },
+                images: [],
 
+                states: [],
                 countries: [],
                 propertyTypes: [],
 
@@ -330,21 +262,11 @@
                 successAlert: false,
                 errorAlert: false,
                 messageAlert: '',
+                imageValidation: '',
             }
         },
 
         methods: {
-
-            getCurrentProperty(){
-                axios.get('/api/user/property/'+ this.$route.params.id +'/edit')
-                    .then((response) => {
-                        response.data.success === true ? this.populateForm(response) : false;
-                        console.log(response.data.property);
-                    }).catch((error) => {
-                    console.log(error);
-                });
-            },
-
             populateForm(response){
                 this.form.title = response.data.property.title;
                 this.form.property_type_id = response.data.property.property_type_id;
@@ -356,11 +278,10 @@
                 this.form.living_rooms = response.data.property.living_rooms;
                 this.form.cost = response.data.property.cost;
                 this.form.features = response.data.property.features.split(',');
-                this.form.image1 = response.data.property.image1;
-                this.form.image2 = response.data.property.image2;
-                this.form.image3 = response.data.property.image3;
-                this.form.image4 = response.data.property.image4;
-                this.form.image5 = response.data.property.image5;
+
+                response.data.property.property_photos.forEach(function(value, index) {
+                    this.images.push(value.image);
+                });
             },
 
             updateProperty: function(){
@@ -378,21 +299,22 @@
                 formData.append("cost", this.form.cost);
                 formData.append("features", this.form.features);
 
-                if(this.form.image1){
-                    formData.append("image1", this.form.image1);
+                for (let i = 0; i < this.images.length; i++) {
+                    formData.append("images[]", this.images[i].file);
                 }
-                if(this.form.image2){
-                    formData.append("image2", this.form.image2);
-                }
-                if(this.form.image3){
-                    formData.append("image3", this.form.image3);
-                }
-                if(this.form.image4){
-                    formData.append("image4", this.form.image4);
-                }
-                if(this.form.image5){
-                    formData.append("image5", this.form.image5);
-                }
+
+                // if(this.form.image2){
+                //     formData.append("image2", this.form.image2);
+                // }
+                // if(this.form.image3){
+                //     formData.append("image3", this.form.image3);
+                // }
+                // if(this.form.image4){
+                //     formData.append("image4", this.form.image4);
+                // }
+                // if(this.form.image5){
+                //     formData.append("image5", this.form.image5);
+                // }
 
                 let config = {
                     headers: {'content-type': 'multipart/form-data'}
@@ -420,78 +342,97 @@
             },
 
             // upload and preview image
-            uploadImage1: function(event){
-                //Assign image and path to this variable
-                this.form.image1 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image1, file);
-                // assign variable to the image preview
-                this.form.image1preview = URL.createObjectURL(file);
-            },
-            uploadImage2: function(event){
-                //Assign image and path to this variable
-                this.form.image2 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image2, file);
-                // assign variable to the image preview
-                this.form.image2preview = URL.createObjectURL(file);
-            },
-            uploadImage3: function(event){
-                //Assign image and path to this variable
-                this.form.image3 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image3, file);
-                // assign variable to the image preview
-                this.form.image3preview = URL.createObjectURL(file);
-            },
-            uploadImage4: function(event){
-                //Assign image and path to this variable
-                this.form.image4 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image4, file);
-                // assign variable to the image preview
-                this.form.image4preview = URL.createObjectURL(file);
-            },
-            uploadImage5: function(event){
-                //Assign image and path to this variable
-                this.form.image5 = event.target.files[0];
-                // assign variable to the event image upload
-                const file = event.target.files[0];
-                // validate image
-                this.validateImage(this.form.image5, file);
-                // assign variable to the image preview
-                this.form.image5preview = URL.createObjectURL(file);
+            uploadImages: function(event){
+                // assign selected files to event array
+                // loop through files and validate
+                // Add to img object and push to images array
+                let selectedFiles = event.target.files;
+                for (let i = 0; i < selectedFiles.length; i++){
+                    if(i >= 15 || this.images.length >= 15){// 15 images max
+                        this.imageValidation = "15 images max";
+                        return false;
+                    }
+                    this.validateImage(selectedFiles[i]);
+                    let img = {
+                        src: URL.createObjectURL(selectedFiles[i]),
+                        file: selectedFiles[i],
+                    }
+                    this.images.push(img);
+                }
             },
 
+            removeImage(index){
+                this.images.splice(index, 1);
+            },
+
+            // upload and preview image
+            // uploadImage1: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image1 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image1, file);
+            //     // assign variable to the image preview
+            //     this.form.image1preview = URL.createObjectURL(file);
+            // },
+            // uploadImage2: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image2 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image2, file);
+            //     // assign variable to the image preview
+            //     this.form.image2preview = URL.createObjectURL(file);
+            // },
+            // uploadImage3: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image3 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image3, file);
+            //     // assign variable to the image preview
+            //     this.form.image3preview = URL.createObjectURL(file);
+            // },
+            // uploadImage4: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image4 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image4, file);
+            //     // assign variable to the image preview
+            //     this.form.image4preview = URL.createObjectURL(file);
+            // },
+            // uploadImage5: function(event){
+            //     //Assign image and path to this variable
+            //     this.form.image5 = event.target.files[0];
+            //     // assign variable to the event image upload
+            //     const file = event.target.files[0];
+            //     // validate image
+            //     this.validateImage(this.form.image5, file);
+            //     // assign variable to the image preview
+            //     this.form.image5preview = URL.createObjectURL(file);
+            // },
+
             // Validate image
-            validateImage: function(img, file){
+            validateImage: function(img){
                 console.log(img.type +' - '+ img.size);
                 let fileType = ['image/png', 'image/jpg', 'image/jpeg']
-                if(fileType.includes(file.type) === false){
-                    img = null;
-                    this.errorAlert = true;
-                    this.messageAlert = "Incorrect format for "+file.name;
+                if(fileType.includes(img.type) === false){
+                    this.imageValidation = "Incorrect format for "+img.name;
                     return false;
                 }else{
-                    this.errorAlert = false;
-                    this.messageAlert = '';
+                    this.imageValidation = '';
                 }
 
                 if(img.size > 3000000){
-                    this.errorAlert = true;
-                    this.messageAlert = "Image can't be greater than 3mb for"+file.name;
+                    this.imageValidation = "Image can't be greater than 3mb for "+img.name;
                     return false;
                 }else{
-                    this.errorAlert = false;
-                    this.messageAlert = '';
+                    this.imageValidation = '';
                 }
             },
 
@@ -513,7 +454,17 @@
                     }).catch((error) => {
                     console.log(error);
                 });
-            }
+            },
+
+            getCurrentProperty(){
+                axios.get('/api/user/property/'+ this.$route.params.id +'/edit')
+                    .then((response) => {
+                        response.data.success === true ? this.populateForm(response) : false;
+                        console.log(response.data.property);
+                    }).catch((error) => {
+                    console.log(error);
+                });
+            },
 
         },
 

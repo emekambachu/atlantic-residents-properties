@@ -40,7 +40,7 @@ class PropertyDetail extends Model
     }
 
     public function property_photos(){
-        return $this->hasMany(PropertyPhoto::class, 'property_type_id', 'id');
+        return $this->hasMany(PropertyPhoto::class, 'property_detail_id', 'id');
     }
 
     public function state(){

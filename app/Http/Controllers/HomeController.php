@@ -16,7 +16,8 @@ class HomeController extends Controller
      */
     public function index(){
 
-        $data['properties'] = PropertyDetail::with('country', 'property_type')
+        $data['properties'] = PropertyDetail::with('country', 'property_type', 'property_photos')
+            ->has('property_photos')
             ->latest()->limit(6)->get();
         $data['countries'] = Country::orderBy('name')->get();
         $data['property_types'] = PropertyType::orderBy('name')->get();
