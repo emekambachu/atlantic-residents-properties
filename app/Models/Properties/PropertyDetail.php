@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties;
 
+use App\Models\Country;
 use App\Models\State;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -39,7 +40,7 @@ class PropertyDetail extends Model
     }
 
     public function country(){
-        return $this->belongsTo(State::class, 'country_id', 'id');
+        return $this->belongsTo(Country::class, 'country_id', 'id');
     }
 
     public function property_type(){

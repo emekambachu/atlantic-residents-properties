@@ -59,12 +59,6 @@
                     <ul class="nav-menu">
                         <li><a href="{{ url('/') }}">Home<span class="submenu-indicator"></span></a></li>
                         <li><a href="{{ url('/properties') }}">Properties<span class="submenu-indicator"></span></a></li>
-{{--                        <li><a href="{{ url('/properties') }}">Properties<span class="submenu-indicator"></span></a>--}}
-{{--                            <ul class="nav-dropdown nav-submenu">--}}
-{{--                                <li><a href="#">Listing Grid</a></li>--}}
-{{--                                <li><a href="#">Listing List</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
                         <li><a href="{{ url('/about') }}">About<span class="submenu-indicator"></span></a>
                             <ul class="nav-dropdown nav-submenu">
                                 <li><a href="{{ url('/about') }}">Company</a></li>
@@ -194,6 +188,7 @@
 <script src="{{ asset('assets/js/lightbox.js') }}"></script>
 <script src="{{ asset('assets/js/imagesloaded.js') }}"></script>
 <script src="{{ asset('assets/js/daterangepicker.js') }}"></script>
+
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 <!-- ============================================================== -->
 <!-- This page plugins -->

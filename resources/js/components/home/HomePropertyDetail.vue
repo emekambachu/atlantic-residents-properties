@@ -42,7 +42,6 @@
 
                     <!-- Single Block Wrap -->
                     <div class="property_block_wrap">
-
                         <div class="property_block_wrap_header">
                             <h4 class="property_block_title">About Property</h4>
                         </div>
@@ -50,34 +49,8 @@
                         <div class="block-body">
                             <p v-html="property.description"></p>
                         </div>
-
                     </div>
 
-                    <!-- Single Block Wrap -->
-<!--                    <div class="property_block_wrap">-->
-
-<!--                        <div class="property_block_wrap_header">-->
-<!--                            <h4 class="property_block_title">Advance Features</h4>-->
-<!--                        </div>-->
-
-<!--                        <div class="block-body">-->
-<!--                            <ul class="row p-0 m-0">-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bed mr-1"></i>4 Bedrooms</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bath mr-1"></i>2 Bathrooms</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-expand-arrows-alt mr-1"></i>12400 sqft</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-house-damage mr-1"></i>1 Living Rooms</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-building mr-1"></i>Build 2007</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-utensils mr-1"></i>2 Kitchens </li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-car mr-1"></i>Car Parking</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-briefcase-medical mr-1"></i>Free Medical</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-fire mr-1"></i>Fireplace</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-layer-group mr-1"></i>Residential</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-tv mr-1"></i>TV Cable</li>-->
-<!--                                <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-spa mr-1"></i>Free Spa</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-
-<!--                    </div>-->
 
                     <!-- Single Block Wrap -->
                     <div v-if="property.features !== null" class="property_block_wrap">

@@ -264,11 +264,9 @@
             </div>
 
             <div class="row justify-content-center">
-
                 @foreach($properties as $property)
                 <home-sample-properties :property="{{ $property }}"></home-sample-properties>
                 @endforeach
-
             </div>
 
         </div>
