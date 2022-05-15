@@ -121,16 +121,16 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Bedrooms</label>
-                                            <input type="text" name="bedroom" required
+                                            <input type="number" name="bedroom" required
                                                    class="form-control filter-input"
                                                    v-model="form.bedrooms">
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Bathrooms</label>
                                             <input type="number" name="bathroom" required
@@ -139,12 +139,21 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Living Rooms</label>
-                                            <input type="text" name="living_room" required
+                                            <input type="number" name="living_room" required
                                                    class="form-control filter-input"
                                                    v-model="form.living_rooms">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Square Feet</label>
+                                            <input type="number" name="living_room" required
+                                                   class="form-control filter-input"
+                                                   v-model="form.square_feet">
                                         </div>
                                     </div>
 
@@ -248,6 +257,7 @@
                     bedrooms: '',
                     bathrooms: '',
                     living_rooms: '',
+                    square_feet: '',
                     cost: '',
                     features: [],
                 },
@@ -276,6 +286,7 @@
                 this.form.bedrooms = response.data.property.bedrooms;
                 this.form.bathrooms = response.data.property.bathrooms;
                 this.form.living_rooms = response.data.property.living_rooms;
+                this.form.square_feet = response.data.property.square_feet;
                 this.form.cost = response.data.property.cost;
                 this.form.features = response.data.property.features.split(',');
 
@@ -296,6 +307,7 @@
                 formData.append("bedrooms", this.form.bedrooms);
                 formData.append("bathrooms", this.form.bathrooms);
                 formData.append("living_rooms", this.form.living_rooms);
+                formData.append("square_feet", this.form.square_feet);
                 formData.append("cost", this.form.cost);
                 formData.append("features", this.form.features);
 

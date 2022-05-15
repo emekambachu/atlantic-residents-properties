@@ -56,6 +56,7 @@
                                             <select id="ptypes" class="form-control">
                                                 <option value="">&nbsp;</option>
                                                 <option value="1">All categories</option>
+                                                <option value="2">House</option>
                                                 <option value="2">Apartment</option>
                                                 <option value="3">Villas</option>
                                                 <option value="4">Commercial</option>

@@ -85,6 +85,7 @@
                                             <select id="ptypes" class="form-control">
                                                 <option value="">&nbsp;</option>
                                                 <option value="1">All categories</option>
+                                                <option value="2">House</option>
                                                 <option value="2">Apartment</option>
                                                 <option value="3">Villas</option>
                                                 <option value="4">Commercial</option>
@@ -127,86 +128,6 @@
                 @foreach($properties as $property)
                     <home-sample-properties :property="{{ $property }}"></home-sample-properties>
                 @endforeach
-
-
-{{--                <!-- Single Property -->--}}
-{{--                <div class="col-lg-4 col-md-6 col-sm-12">--}}
-{{--                    <div class="property-listing property-2">--}}
-
-{{--                        <div class="listing-img-wrapper">--}}
-{{--                            <div class="_exlio_125">For Sale</div>--}}
-{{--                            <div class="list-img-slide">--}}
-{{--                                <div class="click">--}}
-{{--                                    <div><a href="">--}}
-{{--                                            <img src="{{ asset('assets/img/p-7.png') }}"--}}
-{{--                                                 class="img-fluid mx-auto" alt="" /></a></div>--}}
-{{--                                    <div><a href="">--}}
-{{--                                            <img src="{{ asset('assets/img/p-8.png') }}"--}}
-{{--                                                 class="img-fluid mx-auto" alt="" /></a></div>--}}
-{{--                                    <div><a href="">--}}
-{{--                                            <img src="{{ asset('assets/img/p-9.png') }}"--}}
-{{--                                                 class="img-fluid mx-auto" alt="" /></a></div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="listing-detail-wrapper">--}}
-{{--                            <div class="listing-short-detail-wrap">--}}
-{{--                                <div class="_card_list_flex mb-2">--}}
-{{--                                    <div class="_card_flex_01">--}}
-{{--                                        <span class="_list_blickes _netork">5 Network</span>--}}
-{{--                                        <span class="_list_blickes types">Offices</span>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="_card_flex_last">--}}
-{{--                                        <div class="prt_saveed_12lk">--}}
-{{--                                            <label class="toggler toggler-danger">--}}
-{{--                                                <input type="checkbox"><i class="ti-heart"></i></label>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="_card_list_flex">--}}
-{{--                                    <div class="_card_flex_01">--}}
-{{--                                        <h4 class="listing-name verified">--}}
-{{--                                            <a href="" class="prt-link-detail">--}}
-{{--                                                9632 New Green Garden, Huwai Denever USA, AWE789O</a></h4>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="price-features-wrapper">--}}
-{{--                            <div class="list-fx-features">--}}
-{{--                                <div class="listing-card-info-icon">--}}
-{{--                                    <div class="inc-fleat-icon">--}}
-{{--                                        <img src="{{ asset('assets/img/bed.svg') }}"--}}
-{{--                                             width="13" alt="" /></div>5 Beds--}}
-{{--                                </div>--}}
-{{--                                <div class="listing-card-info-icon">--}}
-{{--                                    <div class="inc-fleat-icon">--}}
-{{--                                        <img src="{{ asset('assets/img/bathtub.svg') }}"--}}
-{{--                                             width="13" alt="" /></div>2 Bath--}}
-{{--                                </div>--}}
-{{--                                <div class="listing-card-info-icon">--}}
-{{--                                    <div class="inc-fleat-icon">--}}
-{{--                                        <img src="{{ asset('assets/img/move.svg') }}"--}}
-{{--                                             width="13" alt="" /></div>900 sqft--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="listing-detail-footer">--}}
-{{--                            <div class="footer-first">--}}
-{{--                                <h6 class="listing-card-info-price mb-0 p-0">$9,500</h6>--}}
-{{--                            </div>--}}
-{{--                            <div class="footer-flex">--}}
-{{--                                <a href="" class="prt-view">View Detail</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- End Single Property -->--}}
-
             </div>
 
             <!-- Pagination -->
