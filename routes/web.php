@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GithubDeploymentController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -58,3 +59,50 @@ Route::get('/user/{any}', static function () {
 })->where('any', '.*');
 
 Route::post('/github/deploy', [GithubDeploymentController::class, 'deploy']);
+
+// Cache clearing Routes
+//Clear route cache:
+Route::get('/route-cache', static function () {
+    $exitCode = Artisan::call('route:cache');
+    return 'Routes cache cleared';
+});
+
+//Clear route cache:
+Route::get('/route-clear', static function () {
+    $exitCode = Artisan::call('route:clear');
+    return 'Routes cache cleared';
+});
+
+//Clear config cache:
+Route::get('/config-cache', static function () {
+    $exitCode = Artisan::call('config:cache');
+    return 'Config cache cleared';
+});
+//Clear config cache:
+Route::get('/config-clear', static function () {
+    $exitCode = Artisan::call('config:clear');
+    return 'Config cache cleared';
+});
+
+// Clear application cache:
+Route::get('/clear-cache', static function () {
+    $exitCode = Artisan::call('cache:clear');
+    return 'Application cache cleared';
+});
+
+// Clear view cache:
+Route::get('/view-clear', static function () {
+    $exitCode = Artisan::call('view:clear');
+    return 'View cache cleared';
+});
+
+// Clear view cache:
+Route::get('/comments/notification/daily/reminder', static function () {
+    $exitCode = Artisan::call('reminder:admin-morning-notification');
+    return 'Notifiication sent';
+});
+
+Route::get('/yaedp/mail/send-success-email', static function () {
+    $exitCode = Artisan::call('queue:work');
+    return 'Email sent';
+});
