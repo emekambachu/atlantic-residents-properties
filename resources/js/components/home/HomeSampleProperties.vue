@@ -47,20 +47,27 @@
 
             <div class="price-features-wrapper">
                 <div class="list-fx-features">
-                    <div class="listing-card-info-icon">
-                        <div class="inc-fleat-icon">
-                            <img src="/assets/img/bed.svg" alt="" width="13"></div>
-                        {{ property.bedrooms }} Beds
-                    </div>
-                    <div class="listing-card-info-icon">
-                        <div class="inc-fleat-icon">
-                            <img src="/assets/img/bathtub.svg" alt="" width="13"></div>
-                        {{ property.bathrooms }} Bath
-                    </div>
-                    <div class="listing-card-info-icon">
-                        <div class="inc-fleat-icon">
-                            <img src="/assets/img/move.svg" alt="" width="13"></div>
-                        {{ property.living_rooms }} Living rooms
+                    <div class="row">
+                        <div class="listing-card-info-icon col-6">
+                            <div class="inc-fleat-icon">
+                                <img src="/assets/img/bed.svg" alt="" width="13"></div>
+                            {{ property.bedrooms }} Beds
+                        </div>
+                        <div class="listing-card-info-icon col-6">
+                            <div class="inc-fleat-icon">
+                                <img src="/assets/img/bathtub.svg" alt="" width="13"></div>
+                            {{ property.bathrooms }} Bath
+                        </div>
+                        <div class="listing-card-info-icon col-6">
+                            <div class="inc-fleat-icon">
+                                <i class="fa fa-chair"></i></div>
+                            {{ property.living_rooms }} Living rooms
+                        </div>
+                        <div class="listing-card-info-icon col-6">
+                            <div class="inc-fleat-icon">
+                                <img src="/assets/img/move.svg" alt="" width="13"></div>
+                            {{ property.square_feet }} Square Feet
+                        </div>
                     </div>
                 </div>
             </div>

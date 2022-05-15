@@ -214,7 +214,7 @@
                                                 <div v-for="(image, index) in images" :key="index"
                                                      style="width:100px; margin-right:5px;"
                                                      class="text-center">
-                                                    <img :src="image.src ? image.src : '/photos/properties/'+image"
+                                                    <img :src="image.src !== null ? image.src : '/photos/properties/'+image"
                                                          :alt="image.file.name"
                                                          :title="image.file.name"/><br>
                                                     <i @click.prevent="removeImage(index)"
@@ -222,8 +222,8 @@
                                                        title="remove"></i>
                                                 </div>
                                             </div>
-
                                         </div>
+
                                     </div>
 
                                     <div class="col-12">
@@ -482,6 +482,7 @@
 
         mounted(){
             console.log('The id is: ' + this.$route.params.id);
+            console.log('Images: ' + this.images);
             this.getCountries();
             this.getPropertyTypes();
             this.getCurrentProperty();

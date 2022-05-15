@@ -228,7 +228,7 @@ class UserAccountController extends Controller
         $property = PropertyDetail::with('property_type', 'country', 'property_photos')->findOrFail($id);
         return response()->json([
             "success" => true,
-            "property" => $property
+            "property" => $property,
         ]);
     }
 

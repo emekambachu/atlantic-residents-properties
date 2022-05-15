@@ -2,7 +2,7 @@
 
     <!--Slick slider, the jquery script should be in the blade file section-->
     <div class="your-class m-5">
-        <div v-for="(photo, index) in property.property_photos" :key="index">
+        <div class="mr-5" v-for="(photo, index) in property.property_photos" :key="index">
             <img :src="'/photos/properties/'+photo.image"
                  class="center-cropped" alt=""/>
         </div>
