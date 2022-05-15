@@ -117,9 +117,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Room Description</label>
-                                            <textarea type="text" name="description"
-                                                      class="form-control filter-input"
-                                                      v-model="form.description"></textarea>
+                                            <ckeditor :editor="editor" v-model="form.description"
+                                                      :config="editorConfig"></ckeditor>
                                         </div>
                                     </div>
 
@@ -306,9 +305,20 @@
 </template>
 
 <script>
+    import CKEditor from '@ckeditor/ckeditor5-vue';
+    import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
     export default {
+        components: {
+            // Use the <ckeditor> component in this view.
+            ckeditor: CKEditor.component
+        },
         data(){
             return {
+                editor: ClassicEditor,
+                editorConfig: {
+
+                },
                 form: {
                     title: '',
                     property_type_id: '',
@@ -359,17 +369,6 @@
                     formData.append("images[]", this.images[i].file);
                 }
 
-                // formData.append("image2", this.form.image2);
-                // if(this.form.image3){
-                //     formData.append("image3", this.form.image3);
-                // }
-                // if(this.form.image4){
-                //     formData.append("image4", this.form.image4);
-                // }
-                // if(this.form.image5){
-                //     formData.append("image5", this.form.image5);
-                // }
-
                 let config = {
                     headers: { 'content-type': 'multipart/form-data' }
                 }
@@ -408,57 +407,6 @@
             removeImage(index){
                 this.images.splice(index, 1);
             },
-
-            // uploadImage1: function(event){
-            //     //Assign image and path to this variable
-            //     this.form.image1 = event.target.files[0];
-            //     // assign variable to the event image upload
-            //     const file = event.target.files[0];
-            //     // validate image
-            //     this.validateImage(this.form.image1, file);
-            //     // assign variable to the image preview
-            //     this.form.image1preview = URL.createObjectURL(file);
-            // },
-            // uploadImage2: function(event){
-            //     //Assign image and path to this variable
-            //     this.form.image2 = event.target.files[0];
-            //     // assign variable to the event image upload
-            //     const file = event.target.files[0];
-            //     // validate image
-            //     this.validateImage(this.form.image2, file);
-            //     // assign variable to the image preview
-            //     this.form.image2preview = URL.createObjectURL(file);
-            // },
-            // uploadImage3: function(event){
-            //     //Assign image and path to this variable
-            //     this.form.image3 = event.target.files[0];
-            //     // assign variable to the event image upload
-            //     const file = event.target.files[0];
-            //     // validate image
-            //     this.validateImage(this.form.image3, file);
-            //     // assign variable to the image preview
-            //     this.form.image3preview = URL.createObjectURL(file);
-            // },
-            // uploadImage4: function(event){
-            //     //Assign image and path to this variable
-            //     this.form.image4 = event.target.files[0];
-            //     // assign variable to the event image upload
-            //     const file = event.target.files[0];
-            //     // validate image
-            //     this.validateImage(this.form.image4, file);
-            //     // assign variable to the image preview
-            //     this.form.image4preview = URL.createObjectURL(file);
-            // },
-            // uploadImage5: function(event){
-            //     //Assign image and path to this variable
-            //     this.form.image5 = event.target.files[0];
-            //     // assign variable to the event image upload
-            //     const file = event.target.files[0];
-            //     // validate image
-            //     this.validateImage(this.form.image5, file);
-            //     // assign variable to the image preview
-            //     this.form.image5preview = URL.createObjectURL(file);
-            // },
 
             // Validate image
             validateImage: function(img){

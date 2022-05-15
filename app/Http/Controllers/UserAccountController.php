@@ -226,9 +226,18 @@ class UserAccountController extends Controller
 
     public function myPropertyEdit($id){
         $property = PropertyDetail::with('property_type', 'country', 'property_photos')->findOrFail($id);
+
+        $images = [];
+        if(count($property->property_photos) > 0){
+            foreach($property->property_photos as $photo){
+                $images[] = $photo->image;
+            }
+        }
+
         return response()->json([
             "success" => true,
             "property" => $property,
+            "images" => $images,
         ]);
     }
 

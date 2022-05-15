@@ -1,7 +1,7 @@
 <template>
 
     <!--Slick slider, the jquery script should be in the blade file section-->
-    <div class="your-class m-5">
+    <div class="your-class mr-1">
         <div class="mr-5" v-for="(photo, index) in property.property_photos" :key="index">
             <img :src="'/photos/properties/'+photo.image"
                  class="center-cropped" alt=""/>
@@ -22,6 +22,7 @@
                                     <li><span class="bed">{{ property.bedrooms }} Beds</span></li>
                                     <li><span class="bath">{{ property.bathrooms }} Bath</span></li>
                                     <li><span class="gar">{{ property.living_rooms }} Living room</span></li>
+                                    <li><span class="gar">{{ property.square_feet }} Square Feet</span></li>
                                 </ul>
                                 <h2>{{ property.address }}</h2>
                                 <span><i class="lni-map-marker"></i> {{ property.country.name }}</span>
@@ -47,7 +48,7 @@
                         </div>
 
                         <div class="block-body">
-                            <p>{{ property.description }}</p>
+                            <p v-html="property.description"></p>
                         </div>
 
                     </div>

@@ -115,9 +115,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Room Description</label>
-                                            <textarea type="text" name="description"
-                                                      class="form-control filter-input"
-                                                      v-model="form.description"></textarea>
+                                            <ckeditor :editor="editor" v-model="form.description"
+                                                      :config="editorConfig"></ckeditor>
                                         </div>
                                     </div>
 
@@ -214,9 +213,7 @@
                                                 <div v-for="(image, index) in images" :key="index"
                                                      style="width:100px; margin-right:5px;"
                                                      class="text-center">
-                                                    <img :src="image.src !== null ? image.src : '/photos/properties/'+image"
-                                                         :alt="image.file.name"
-                                                         :title="image.file.name"/><br>
+                                                    <img :src="image.file !== null ? image.src : '/photos/properties/'+image.src"/><br>
                                                     <i @click.prevent="removeImage(index)"
                                                        class="fa-duotone fa-x bg-danger text-white p-1"
                                                        title="remove"></i>
@@ -245,9 +242,20 @@
 </template>
 
 <script>
+    import CKEditor from '@ckeditor/ckeditor5-vue';
+    import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
     export default {
+        components: {
+            // Use the <ckeditor> component in this view.
+            ckeditor: CKEditor.component
+        },
         data(){
             return {
+                editor: ClassicEditor,
+                editorConfig: {
+
+                },
                 form: {
                     title: '',
                     property_type_id: '',
@@ -290,9 +298,13 @@
                 this.form.cost = response.data.property.cost;
                 this.form.features = response.data.property.features.split(',');
 
-                response.data.property.property_photos.forEach(function(value, index) {
-                    this.images.push(value.image);
-                });
+                // populate images
+                for (let i = 0; i < response.data.images.length; i++) {
+                    this.images.push({
+                        src: response.data.images[i],
+                        file: null
+                    });
+                }
             },
 
             updateProperty: function(){
