@@ -22,7 +22,8 @@
 
             <div class="row">
                 <div class="col-xl-7 col-lg-8 col-md-10">
-                    <h2 class="big-header-capt mb-4 text-white">Find Your Next<br>Perfect <span class="theme-cl">Place</span> To<br> Live.</h2>
+                    <h2 class="big-header-capt mb-4 text-white">
+                        Find Your Next<br>Perfect <span class="theme-cl">Place</span> To<br> Live.</h2>
                 </div>
             </div>
 
@@ -57,11 +58,11 @@
                                                 <option value="">&nbsp;</option>
                                                 <option value="1">All categories</option>
                                                 <option value="2">House</option>
-                                                <option value="2">Apartment</option>
-                                                <option value="3">Villas</option>
-                                                <option value="4">Commercial</option>
-                                                <option value="5">Offices</option>
-                                                <option value="6">Garage</option>
+                                                <option value="3">Apartment</option>
+                                                <option value="4">Villas</option>
+                                                <option value="5">Commercial</option>
+                                                <option value="6">Offices</option>
+                                                <option value="7">Garage</option>
                                             </select>
                                         </div>
                                     </div>
