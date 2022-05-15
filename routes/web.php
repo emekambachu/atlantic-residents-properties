@@ -95,14 +95,3 @@ Route::get('/view-clear', static function () {
     $exitCode = Artisan::call('view:clear');
     return 'View cache cleared';
 });
-
-// Clear view cache:
-Route::get('/comments/notification/daily/reminder', static function () {
-    $exitCode = Artisan::call('reminder:admin-morning-notification');
-    return 'Notifiication sent';
-});
-
-Route::get('/yaedp/mail/send-success-email', static function () {
-    $exitCode = Artisan::call('queue:work');
-    return 'Email sent';
-});
